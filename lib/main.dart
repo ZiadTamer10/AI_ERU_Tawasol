@@ -11,6 +11,6 @@ class AiEruTawasol extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: SplashView());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: SplashView());
   }
 }

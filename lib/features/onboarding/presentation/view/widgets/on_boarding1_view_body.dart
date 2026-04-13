@@ -44,6 +44,24 @@ class OnBoarding1ViewBody extends StatelessWidget {
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
         ),
         SizedBox(height: 30),
+        ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Color(0xff003096),
+            fixedSize: Size(220, 57),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+          child: Text(
+            'CONTINUE',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
+          ),
+        ),
       ],
     );
   }

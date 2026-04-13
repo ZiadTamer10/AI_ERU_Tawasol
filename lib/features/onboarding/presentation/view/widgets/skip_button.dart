@@ -27,7 +27,7 @@ class SkipButton extends StatelessWidget {
                   : () {
                       controller.animateToPage(
                         onBoardingList.length - 1,
-                        duration: const Duration(milliseconds: 1),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                       );
                     },

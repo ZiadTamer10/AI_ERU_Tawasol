@@ -19,12 +19,19 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   bool get isLastPage => currentIndex == onBoardingList.length - 1;
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         SkipButton(isLastPage: isLastPage, controller: controller),
         Expanded(
           child: PageView.builder(
+            physics: const NeverScrollableScrollPhysics(),
             controller: controller,
             itemCount: onBoardingList.length,
             onPageChanged: (index) {

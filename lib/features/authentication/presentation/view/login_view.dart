@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/login_view_body.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -5,6 +6,6 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(body: LoginViewBody());
   }
 }

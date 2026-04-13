@@ -30,6 +30,20 @@ class OnBoarding1ViewBody extends StatelessWidget {
         ),
         SizedBox(height: 50),
         SvgPicture.asset(AssetsData.onBoarding1),
+
+        SizedBox(height: 20),
+        Text(
+          'Welcome to Cybex IT Group\nwhere learning meets innovation!',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+        ),
+        SizedBox(height: 13),
+        Text(
+          'Empowering your journey through\ncutting-edge IT education and \nexpertise',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+        ),
+        SizedBox(height: 30),
       ],
     );
   }

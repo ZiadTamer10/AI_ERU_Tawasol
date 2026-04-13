@@ -4,30 +4,32 @@ import 'package:ai_eru_tawasol/features/onboarding/data/model/on_boarding_model.
 final List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
     image: AssetsData.onBoarding1,
-    title: 'Welcome to Cybex IT Group\nwhere learning meets innovation!',
-    subtitle: 'Empowering your journey through\ncutting-edge IT education',
-  ),
-  OnBoardingModel(
-    image: AssetsData.onBoarding1,
-    title: 'Begin your learning journey and \nunlock a world of knowledge',
+    title: 'Welcome to AI\nConnect!',
     subtitle:
-        'Explore our comprehensive courses \ndesigned to transform your skills and \ncareer',
+        'The smart communication hub for AI\nstudents and faculty at ERU.',
   ),
   OnBoardingModel(
-    image: AssetsData.onBoarding1,
-    title: 'Dive into a seamless learning \nexperience with Cybex IT Group',
+    image: AssetsData.onBoarding2,
+    title: 'Seamless Academic\n Updates',
     subtitle:
-        'Experience interactive learning with\n expert-led courses and progress \ntracking',
+        'Receive announcements, lecture links,\n and exam schedules directly from \nyour instructors.',
   ),
   OnBoardingModel(
-    image: AssetsData.onBoarding1,
-    title: 'Join a community of learners and\n embark on a learning adventure',
+    image: AssetsData.onBoarding3,
+    title: 'Submit Assignments Easily',
     subtitle:
-        'Connect with like-minded individuals \nJoin us to learn, grow, and thrive \ntogether!',
+        'Securely upload your solved \nassignments from any device and \ntrack your submissions.',
   ),
   OnBoardingModel(
-    image: AssetsData.onBoarding1,
-    title: 'Join Cybex IT Group to Kick Start\n Your Lesson',
-    subtitle: 'Join and Learn from our Top Instructors!',
+    image: AssetsData.onBoarding4,
+    title: 'Direct Faculty Access &\n Support',
+    subtitle:
+        'Communicate with professors \nand advisors, and easily submit academic \nfeedback or complaints.',
+  ),
+  OnBoardingModel(
+    image: AssetsData.onBoarding5,
+    title: 'Kick-start Your Studies!',
+    subtitle:
+        'Log in with your university credentials \nand access your personalized course\n materials.',
   ),
 ];

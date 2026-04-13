@@ -11,7 +11,7 @@ class OnBoardingItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 50),
+        const SizedBox(height: 40),
         SvgPicture.asset(model.image),
         const SizedBox(height: 20),
         Text(
@@ -23,7 +23,7 @@ class OnBoardingItem extends StatelessWidget {
         Text(
           model.subtitle,
           textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 16),
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
         ),
       ],
     );

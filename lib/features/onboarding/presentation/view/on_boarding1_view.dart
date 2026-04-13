@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/on_boarding1_view_body.dart';
 import 'package:flutter/material.dart';
 
 class OnBoarding1View extends StatelessWidget {
@@ -5,6 +6,9 @@ class OnBoarding1View extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: OnBoarding1View());
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(child: OnBoarding1ViewBody()),
+    );
   }
 }

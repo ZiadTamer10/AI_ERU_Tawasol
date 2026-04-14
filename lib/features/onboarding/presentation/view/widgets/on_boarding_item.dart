@@ -14,10 +14,13 @@ class OnBoardingItem extends StatelessWidget {
         const SizedBox(height: 40),
         SvgPicture.asset(model.image),
         const SizedBox(height: 20),
-        Text(
-          model.title,
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+        SizedBox(
+          height: 61,
+          child: Text(
+            model.title,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+          ),
         ),
         const SizedBox(height: 13),
         Text(

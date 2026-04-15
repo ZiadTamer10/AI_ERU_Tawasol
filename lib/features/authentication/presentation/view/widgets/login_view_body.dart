@@ -6,37 +6,71 @@ import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/terms_and_privacy_text.dart';
 import 'package:flutter/material.dart';
 
-class LoginViewBody extends StatelessWidget {
+class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
+
+  @override
+  State<LoginViewBody> createState() => _LoginViewBodyState();
+}
+
+class _LoginViewBodyState extends State<LoginViewBody> {
+  final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  bool rememberMe = false;
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(height: 240),
-          Text('Welcome', style: Styles.textStyle32),
-          TermsAndPrivacyText(),
-          SizedBox(height: 20),
-          SectionDivider(),
-          SizedBox(height: 56),
-          CustomTextFormField(
-            hintText: 'Email',
-            onChanged: (String email) {},
-            prefixIcon: Icons.email_outlined,
-          ),
-          SizedBox(height: 25),
-          CustomTextFormField(
-            hintText: 'Password',
-            onChanged: (String password) {},
-            prefixIcon: Icons.lock_outline_rounded,
-            obscureText: true,
-          ),
-          SizedBox(height: 24),
-          RememberMe(onChanged: (value) {}),
-          SizedBox(height: 40),
-          CustomButton(onPressed: () {}),
-        ],
+      child: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            const SizedBox(height: 240),
+            Text('Welcome', style: Styles.textStyle32),
+            const TermsAndPrivacyText(),
+            const SizedBox(height: 20),
+            const SectionDivider(),
+            const SizedBox(height: 56),
+            CustomTextFormField(
+              controller: emailController,
+              hintText: 'Email',
+              onChanged: (_) {},
+              prefixIcon: Icons.email_outlined,
+            ),
+            const SizedBox(height: 25),
+            CustomTextFormField(
+              controller: passwordController,
+              hintText: 'Password',
+              onChanged: (_) {},
+              prefixIcon: Icons.lock_outline_rounded,
+              obscureText: true,
+            ),
+            const SizedBox(height: 24),
+            RememberMe(
+              onChanged: (value) {
+                rememberMe = value;
+              },
+            ),
+            const SizedBox(height: 40),
+            CustomButton(
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  /// 🔥 هنا بعد كدا هتحط Cubit
+                }
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

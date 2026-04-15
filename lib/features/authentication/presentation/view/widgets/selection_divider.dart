@@ -6,17 +6,22 @@ class SectionDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: Divider(thickness: 2, color: Colors.grey, endIndent: 10),
-        ),
-        Text(
-          "Login to Continue",
-          style: Styles.textStyle22.copyWith(fontWeight: FontWeight.w400),
-        ),
-        Expanded(child: Divider(thickness: 2, color: Colors.grey, indent: 10)),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Row(
+        children: [
+          Expanded(
+            child: Divider(thickness: 2, color: Colors.grey, endIndent: 10),
+          ),
+          Text(
+            "Login to Continue",
+            style: Styles.textStyle22.copyWith(fontWeight: FontWeight.w400),
+          ),
+          Expanded(
+            child: Divider(thickness: 2, color: Colors.grey, indent: 10),
+          ),
+        ],
+      ),
     );
   }
 }

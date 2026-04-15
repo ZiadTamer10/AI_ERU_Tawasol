@@ -1,5 +1,6 @@
 import 'package:ai_eru_tawasol/constants.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
+import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/forget_password_section.dart';
 import 'package:flutter/material.dart';
 
 class RememberMe extends StatefulWidget {
@@ -37,15 +38,7 @@ class _RememberMeState extends State<RememberMe> {
           ),
           Text("Remember me", style: Styles.textStyle16),
           const Spacer(),
-          GestureDetector(
-            onTap: () {
-              print('Forget Password');
-            },
-            child: Text(
-              "Forgot password?",
-              style: Styles.textStyle16.copyWith(color: kPrimaryColor),
-            ),
-          ),
+          ForgetPasswordSection(),
         ],
       ),
     );

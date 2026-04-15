@@ -22,4 +22,6 @@ class Styles {
   );
 
   static const textStyle32 = TextStyle(fontSize: 32);
+
+  static const textStyle18 = TextStyle(fontSize: 18);
 }

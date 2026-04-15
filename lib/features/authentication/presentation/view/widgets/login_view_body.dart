@@ -1,4 +1,5 @@
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
+import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/selection_divider.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/terms_and_privacy_text.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,8 @@ class LoginViewBody extends StatelessWidget {
         SizedBox(height: 240),
         Text('Welcome', style: Styles.textStyle32),
         TermsAndPrivacyText(),
+        SizedBox(height: 20),
+        SectionDivider(),
       ],
     );
   }

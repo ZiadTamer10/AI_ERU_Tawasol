@@ -1,4 +1,5 @@
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
+import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_button.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_text_form_field.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/selection_divider.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/terms_and_privacy_text.dart';
@@ -30,6 +31,8 @@ class LoginViewBody extends StatelessWidget {
             prefixIcon: Icons.lock_outline_rounded,
             obscureText: true,
           ),
+          SizedBox(height: 83),
+          CustomButton(onPressed: () {}),
         ],
       ),
     );

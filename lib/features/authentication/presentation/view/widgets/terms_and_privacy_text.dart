@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,10 @@ class TermsAndPrivacyText extends StatelessWidget {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        style: TextStyle(color: Color(0xff6B5E5E), fontSize: 22),
+        style: Styles.textStyle22.copyWith(
+          color: Color(0xff6B5E5E),
+          fontWeight: FontWeight.w400,
+        ),
         children: [
           const TextSpan(text: "By signing in you are agreeing our "),
           TextSpan(

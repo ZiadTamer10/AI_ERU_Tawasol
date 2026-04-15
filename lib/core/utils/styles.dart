@@ -20,4 +20,6 @@ class Styles {
     fontSize: 16,
     fontWeight: FontWeight.w400,
   );
+
+  static const textStyle32 = TextStyle(fontSize: 32);
 }

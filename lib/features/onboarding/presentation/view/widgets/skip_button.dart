@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/onboarding/data/model/on_boarding_data.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +37,10 @@ class SkipButton extends StatelessWidget {
                 backgroundColor: const Color(0xffD9D9D9),
                 elevation: 0,
               ),
-              child: const Text('SKIP', style: TextStyle(color: Colors.black)),
+              child: Text(
+                'SKIP',
+                style: Styles.textStyle14.copyWith(color: Colors.black),
+              ),
             ),
           ),
         ],

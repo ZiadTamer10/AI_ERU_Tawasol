@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/onboarding/data/model/on_boarding_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -19,14 +20,14 @@ class OnBoardingItem extends StatelessWidget {
           child: Text(
             model.title,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+            style: Styles.textStyle22,
           ),
         ),
         const SizedBox(height: 13),
         Text(
           model.subtitle,
           textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+          style: Styles.textStyle16,
         ),
       ],
     );

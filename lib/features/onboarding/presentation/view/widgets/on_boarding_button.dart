@@ -1,4 +1,5 @@
 import 'package:ai_eru_tawasol/core/utils/app_router.dart';
+import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -32,7 +33,7 @@ class OnBoardingButton extends StatelessWidget {
       ),
       child: Text(
         isLastPage ? 'Sign In' : 'CONTINUE',
-        style: const TextStyle(color: Colors.white, fontSize: 20),
+        style: Styles.textStyle20.copyWith(color: Colors.white),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/constants.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class TermsAndPrivacyText extends StatelessWidget {
           TextSpan(
             text: "Terms",
             style: const TextStyle(
-              color: Color(0xff003096),
+              color: kPrimaryColor,
               decoration: TextDecoration.underline,
             ),
             recognizer: TapGestureRecognizer()
@@ -31,7 +32,7 @@ class TermsAndPrivacyText extends StatelessWidget {
           TextSpan(
             text: "Privacy Policy",
             style: const TextStyle(
-              color: Color(0xff003096),
+              color: kPrimaryColor,
               decoration: TextDecoration.underline,
             ),
             recognizer: TapGestureRecognizer()

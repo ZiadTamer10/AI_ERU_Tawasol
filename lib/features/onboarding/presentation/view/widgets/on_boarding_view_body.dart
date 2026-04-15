@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/constants.dart';
 import 'package:ai_eru_tawasol/features/onboarding/data/model/on_boarding_data.dart';
 import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/on_boarding_button.dart';
 import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/on_boarding_item.dart';
@@ -50,7 +51,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
               spacing: 3,
               dotHeight: 8,
               dotWidth: 8,
-              activeDotColor: Color(0xff003096),
+              activeDotColor: kPrimaryColor,
             ),
           )
         else

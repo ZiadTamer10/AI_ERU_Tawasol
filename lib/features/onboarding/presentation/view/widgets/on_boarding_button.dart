@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/constants.dart';
 import 'package:ai_eru_tawasol/core/utils/app_router.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class OnBoardingButton extends StatelessWidget {
         }
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xff003096),
+        backgroundColor: kPrimaryColor,
         fixedSize: const Size(220, 57),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),

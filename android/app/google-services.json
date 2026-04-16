@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "654487520700",
+    "project_id": "ai-eru-tawasol",
+    "storage_bucket": "ai-eru-tawasol.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654487520700:android:e4609fcbade386745697b9",
+        "android_client_info": {
+          "package_name": "com.example.ai_eru_tawasol"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4wPQ4OLhvsrTAROAAgVLYMkWq4uTHWi4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

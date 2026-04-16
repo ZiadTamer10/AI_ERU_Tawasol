@@ -7,14 +7,14 @@ class CustomTextFormField extends StatelessWidget {
     required this.hintText,
     this.onChanged,
     this.obscureText = false,
-    required this.prefixIcon,
+    this.prefixIcon,
     this.controller,
   });
 
   final String hintText;
   final Function(String)? onChanged;
   final bool obscureText;
-  final IconData prefixIcon;
+  final IconData? prefixIcon;
   final TextEditingController? controller;
 
   @override
@@ -41,7 +41,9 @@ class CustomTextFormField extends StatelessWidget {
         obscureText: obscureText,
         onChanged: onChanged,
         decoration: InputDecoration(
-          prefixIcon: Icon(prefixIcon, size: 28, color: Color(0xffC4C4C4)),
+          prefixIcon: prefixIcon != null
+              ? Icon(prefixIcon, size: 28, color: Color(0xffC4C4C4))
+              : null,
           hint: buildHintText(),
           fillColor: Color(0xffF9F9F9),
           filled: true,

@@ -66,6 +66,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             ),
             const SizedBox(height: 40),
             CustomButton(
+              text: 'Login',
               onPressed: () async {
                 if (_formKey.currentState?.validate() ?? false) {
                   context.read<LoginCubit>().login(

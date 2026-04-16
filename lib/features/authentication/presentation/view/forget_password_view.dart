@@ -6,6 +6,10 @@ class ForgetPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: ForgetPasswordViewBody());
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(backgroundColor: Colors.white),
+      body: ForgetPasswordViewBody(),
+    );
   }
 }

@@ -3,9 +3,10 @@ import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.onPressed});
+  const CustomButton({super.key, this.onPressed, required this.text});
 
   final void Function()? onPressed;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class CustomButton extends StatelessWidget {
             ),
           ),
           child: Text(
-            'Login',
+            text,
             style: Styles.textStyle22.copyWith(color: Colors.white),
           ),
         ),

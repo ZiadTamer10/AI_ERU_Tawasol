@@ -1,5 +1,6 @@
 import 'package:ai_eru_tawasol/core/utils/app_router.dart';
 import 'package:ai_eru_tawasol/core/utils/assets.dart';
+import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -80,10 +81,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
           ),
           Text(
             'EGYPTIAN RUSSIAN UNIVERSITY',
-            style: TextStyle(
+            style: Styles.textStyle14.copyWith(
               color: Colors.white,
               fontSize: 12,
-              fontWeight: FontWeight.w500,
             ),
           ),
         ],

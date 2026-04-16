@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/core/utils/local_storage_services.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_button.dart';
@@ -67,12 +68,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             ),
             const SizedBox(height: 40),
             CustomButton(
-              onPressed: () {
+              onPressed: () async {
                 if (_formKey.currentState?.validate() ?? false) {
                   context.read<LoginCubit>().login(
                     email: emailController.text.trim(),
                     password: passwordController.text.trim(),
                   );
+                  await LocalStorageService().saveRememberMe(rememberMe);
                 }
               },
             ),

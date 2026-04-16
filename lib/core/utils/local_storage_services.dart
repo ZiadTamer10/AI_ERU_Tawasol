@@ -1,13 +1,13 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalStorageService {
-  Future<void> saveEmail(String email) async {
+  Future<void> saveRememberMe(bool value) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('email', email);
+    await prefs.setBool('rememberMe', value);
   }
 
-  Future<String?> getEmail() async {
+  Future<bool> getRememberMe() async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getString('email');
+    return prefs.getBool('rememberMe') ?? false;
   }
 }

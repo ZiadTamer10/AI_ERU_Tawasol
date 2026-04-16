@@ -3,6 +3,7 @@ import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class ForgetPasswordViewBody extends StatefulWidget {
   const ForgetPasswordViewBody({super.key});
@@ -37,6 +38,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text("Reset email sent successfully")),
           );
+          context.pop();
         }
 
         if (state is ForgetPasswordFailure) {

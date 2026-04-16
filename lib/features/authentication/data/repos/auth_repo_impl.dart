@@ -26,4 +26,9 @@ class AuthRepoImpl extends AuthRepo {
       return left(AuthFailure.fromException(e));
     }
   }
+
+  @override
+  Future<void> forgetPassword({required String email}) async {
+    await authServices.forgetPassword(email: email);
+  }
 }

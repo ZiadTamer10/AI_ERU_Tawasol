@@ -7,4 +7,6 @@ abstract class AuthRepo {
     required String email,
     required String password,
   });
+
+  Future<void> forgetPassword({required String email});
 }

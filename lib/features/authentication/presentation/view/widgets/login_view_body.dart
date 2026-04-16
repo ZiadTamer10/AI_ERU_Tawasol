@@ -1,4 +1,5 @@
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
+import 'package:ai_eru_tawasol/features/authentication/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_button.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_text_form_field.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/login_images.dart';
@@ -6,6 +7,7 @@ import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/selection_divider.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/terms_and_privacy_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
@@ -66,8 +68,11 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             const SizedBox(height: 40),
             CustomButton(
               onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  print('login done');
+                if (_formKey.currentState?.validate() ?? false) {
+                  context.read<LoginCubit>().login(
+                    email: emailController.text.trim(),
+                    password: passwordController.text.trim(),
+                  );
                 }
               },
             ),

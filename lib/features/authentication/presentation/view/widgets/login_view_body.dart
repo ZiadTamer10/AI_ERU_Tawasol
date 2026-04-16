@@ -3,6 +3,7 @@ import 'package:ai_eru_tawasol/core/utils/assets.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_button.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_text_form_field.dart';
+import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/login_images.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/remember_me.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/selection_divider.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/terms_and_privacy_text.dart';
@@ -68,35 +69,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             CustomButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  /// 🔥 هنا بعد كدا هتحط Cubit
+                  print('login done');
                 }
               },
             ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class LoginImages extends StatelessWidget {
-  const LoginImages({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(AssetsData.logo2, height: 90),
-        Text(
-          'AI Connect',
-          style: TextStyle(
-            color: kPrimaryColor,
-            fontSize: 34,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Image.asset(AssetsData.login),
-      ],
     );
   }
 }

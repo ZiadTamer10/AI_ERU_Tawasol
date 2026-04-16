@@ -11,4 +11,8 @@ class AuthServices {
 
     return userCredential.user;
   }
+
+  Future<void> forgetPassword({required String email}) async {
+    await auth.sendPasswordResetEmail(email: email);
+  }
 }

@@ -31,7 +31,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       context.go(AppRouter.kDoctorHomeView);
     } else {
       await FirebaseAuth.instance.signOut();
-      context.go(AppRouter.kOnBoardingView1);
+      context.go(AppRouter.kOnBoardingView);
     }
   }
 

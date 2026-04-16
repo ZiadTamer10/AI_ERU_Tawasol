@@ -49,14 +49,12 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             CustomTextFormField(
               controller: emailController,
               hintText: 'Email',
-              onChanged: (_) {},
               prefixIcon: Icons.email_outlined,
             ),
             const SizedBox(height: 25),
             CustomTextFormField(
               controller: passwordController,
               hintText: 'Password',
-              onChanged: (_) {},
               prefixIcon: Icons.lock_outline_rounded,
               obscureText: true,
             ),

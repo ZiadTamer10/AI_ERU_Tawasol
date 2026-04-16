@@ -5,5 +5,6 @@ class AssetsData {
   static const String onBoarding3 = 'assets/images/svg/on_boarding3.svg';
   static const String onBoarding4 = 'assets/images/svg/on_boarding4.svg';
   static const String onBoarding5 = 'assets/images/svg/on_boarding5.svg';
-  static const String login = 'assets/images/svg/login.svg';
+  static const String logo2 = 'assets/images/logo 1.png';
+  static const String login = 'assets/images/login.png';
 }

@@ -1,3 +1,5 @@
+import 'package:ai_eru_tawasol/constants.dart';
+import 'package:ai_eru_tawasol/core/utils/assets.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_button.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_text_form_field.dart';
@@ -35,12 +37,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         key: _formKey,
         child: Column(
           children: [
-            const SizedBox(height: 240),
+            SizedBox(height: 32),
+            LoginImages(),
             Text('Welcome', style: Styles.textStyle32),
             const TermsAndPrivacyText(),
             const SizedBox(height: 20),
             const SectionDivider(),
-            const SizedBox(height: 56),
+            const SizedBox(height: 30),
             CustomTextFormField(
               controller: emailController,
               hintText: 'Email',
@@ -72,6 +75,28 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class LoginImages extends StatelessWidget {
+  const LoginImages({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Image.asset(AssetsData.logo2, height: 90),
+        Text(
+          'AI Connect',
+          style: TextStyle(
+            color: kPrimaryColor,
+            fontSize: 34,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Image.asset(AssetsData.login),
+      ],
     );
   }
 }

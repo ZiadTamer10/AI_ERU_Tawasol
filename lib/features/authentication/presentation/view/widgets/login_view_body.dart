@@ -1,5 +1,3 @@
-import 'package:ai_eru_tawasol/constants.dart';
-import 'package:ai_eru_tawasol/core/utils/assets.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_button.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_text_form_field.dart';

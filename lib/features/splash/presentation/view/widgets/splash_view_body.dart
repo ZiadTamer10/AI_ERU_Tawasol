@@ -28,7 +28,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     if (!mounted) return;
 
     if (user != null && rememberMe) {
-      context.go(AppRouter.kDoctorHomeView);
+      context.go(AppRouter.kHomeView);
     } else {
       await FirebaseAuth.instance.signOut();
       context.go(AppRouter.kOnBoardingView);

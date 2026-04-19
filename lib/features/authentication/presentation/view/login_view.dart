@@ -15,7 +15,7 @@ class LoginView extends StatelessWidget {
       body: BlocListener<LoginCubit, LoginState>(
         listener: (context, state) {
           if (state is LoginSuccess) {
-            GoRouter.of(context).push(AppRouter.kDoctorHomeView);
+            GoRouter.of(context).push(AppRouter.kHomeView);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 backgroundColor: Colors.green,

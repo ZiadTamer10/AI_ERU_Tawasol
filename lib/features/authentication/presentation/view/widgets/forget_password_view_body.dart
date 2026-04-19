@@ -54,14 +54,11 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 80),
-
               const Text(
                 "Forgot Password",
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
-
               const SizedBox(height: 20),
-
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
@@ -69,16 +66,12 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
                   style: TextStyle(color: Colors.grey, fontSize: 16),
                 ),
               ),
-
               const SizedBox(height: 30),
-
               CustomTextFormField(
                 hintText: 'Email',
                 controller: emailController,
               ),
-
               const SizedBox(height: 30),
-
               state is ForgetPasswordLoading
                   ? const CircularProgressIndicator()
                   : CustomButton(

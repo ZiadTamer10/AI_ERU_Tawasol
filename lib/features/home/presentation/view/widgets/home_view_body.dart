@@ -1,4 +1,5 @@
 import 'package:ai_eru_tawasol/constants.dart';
+import 'package:ai_eru_tawasol/features/home/presentation/view/widgets/pages.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatefulWidget {
@@ -11,13 +12,6 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   int currentIndex = 0;
 
-  final List<Widget> pages = const [
-    Center(child: Text("Announcements")),
-    Center(child: Text("Courses")),
-    Center(child: Text("Calendar")),
-    Center(child: Text("Profile")),
-  ];
-
   void onItemTapped(int index) {
     setState(() {
       currentIndex = index;
@@ -28,7 +22,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[currentIndex],
-
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: onItemTapped,

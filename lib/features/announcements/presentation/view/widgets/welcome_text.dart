@@ -6,17 +6,20 @@ class WelcomeText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text.rich(
-      TextSpan(
-        style: Styles.textStyle22,
-        children: [
-          const TextSpan(text: 'Welcome '),
-          TextSpan(
-            text: ' Ziad',
-            style: Styles.textStyle22.copyWith(color: Color(0xffC00000)),
-          ),
-          const TextSpan(text: ',\nHere is the latest Announcement!'),
-        ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Text.rich(
+        TextSpan(
+          style: Styles.textStyle22,
+          children: [
+            const TextSpan(text: 'Welcome '),
+            TextSpan(
+              text: ' Ziad',
+              style: Styles.textStyle22.copyWith(color: Color(0xffC00000)),
+            ),
+            const TextSpan(text: ',\nHere is the latest Announcement!'),
+          ],
+        ),
       ),
     );
   }

@@ -22,7 +22,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[currentIndex],
-      bottomNavigationBar: HomeBottomNavBar(
+      bottomNavigationBar: HomeBottomNavigationBar(
         currentIndex: currentIndex,
         onTap: onItemTapped,
       ),

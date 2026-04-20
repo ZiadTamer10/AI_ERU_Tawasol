@@ -8,19 +8,23 @@ class AnnouncementsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return CustomScrollView(
       physics: BouncingScrollPhysics(),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          SizedBox(height: 20),
-          WelcomeText(),
-          Divider(color: Color(0xffC4C4C4), thickness: 2),
-          SizedBox(height: 20),
-          AnnouncementDataListView(),
-        ],
-      ),
+      slivers: [
+        SliverToBoxAdapter(child: CustomAppBar()),
+
+        SliverToBoxAdapter(
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+              WelcomeText(),
+              Divider(color: Color(0xffC4C4C4), thickness: 2),
+              SizedBox(height: 20),
+            ],
+          ),
+        ),
+        AnnouncementDataSliverList(),
+      ],
     );
   }
 }

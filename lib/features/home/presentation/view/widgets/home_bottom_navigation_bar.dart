@@ -22,10 +22,7 @@ class HomeBottomNavBar extends StatelessWidget {
       elevation: 0.01,
       iconSize: 32,
       items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.campaign_outlined),
-          label: "Announcements",
-        ),
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
         BottomNavigationBarItem(
           icon: Icon(Icons.menu_book_outlined),
           label: "Courses",

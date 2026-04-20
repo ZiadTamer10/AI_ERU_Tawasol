@@ -63,7 +63,7 @@ class AnnouncementData extends StatelessWidget {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentGeometry.centerRight,
+                    alignment: Alignment.centerRight,
                     child: RichText(
                       text: TextSpan(
                         style: Styles.textStyle22.copyWith(

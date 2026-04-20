@@ -19,7 +19,6 @@ class AnnouncementData extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 8),
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -34,7 +33,7 @@ class AnnouncementData extends StatelessWidget {
               ],
             ),
             child: Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+              padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -66,7 +65,7 @@ class AnnouncementData extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: RichText(
                       text: TextSpan(
-                        style: Styles.textStyle22.copyWith(
+                        style: Styles.textStyle20.copyWith(
                           color: Color(0xff6B5E5E),
                           fontWeight: FontWeight.w400,
                         ),

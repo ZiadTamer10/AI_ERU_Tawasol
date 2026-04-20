@@ -22,13 +22,26 @@ class HomeBottomNavigationBar extends StatelessWidget {
       elevation: 0.01,
       iconSize: 32,
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: "Courses"),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: "Home",
+          backgroundColor: Colors.white,
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.menu_book),
+          label: "Courses",
+          backgroundColor: Colors.white,
+        ),
         BottomNavigationBarItem(
           icon: Icon(Icons.calendar_month),
           label: "Calendar",
+          backgroundColor: Colors.white,
         ),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          label: "Profile",
+          backgroundColor: Colors.white,
+        ),
       ],
     );
   }

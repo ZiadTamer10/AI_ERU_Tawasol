@@ -12,7 +12,6 @@ class AnnouncementsViewBody extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(child: CustomAppBar()),
-
         SliverToBoxAdapter(
           child: Column(
             children: [

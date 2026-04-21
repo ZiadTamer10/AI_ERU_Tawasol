@@ -7,16 +7,28 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDoctor = true;
     return Padding(
       padding: const EdgeInsets.only(left: 16, right: 16, top: 32),
       child: Row(
         children: [
           Text('Home', style: Styles.textStyle36),
           Spacer(),
-          IconButton(
-            onPressed: () {},
-            icon: FaIcon(FontAwesomeIcons.qrcode, size: 32),
-          ),
+          if (isDoctor) ...[
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.calendar_month_rounded, size: 32),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.person, size: 32),
+            ),
+          ] else ...[
+            IconButton(
+              onPressed: () {},
+              icon: const FaIcon(FontAwesomeIcons.qrcode, size: 32),
+            ),
+          ],
         ],
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:ai_eru_tawasol/constants.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
-import 'package:flutter/gestures.dart';
+import 'package:ai_eru_tawasol/features/home/presentation/view/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class AnnouncementCard extends StatelessWidget {
@@ -68,7 +68,7 @@ class AnnouncementCard extends StatelessWidget {
                         print('Read full details clicked');
                       },
                       child: Text(
-                        "Read full details ➜",
+                        isDoctor ? 'Edit➜' : "Read full details ➜",
                         style: Styles.textStyle20.copyWith(
                           color: kPrimaryColor,
                           fontSize: 19,

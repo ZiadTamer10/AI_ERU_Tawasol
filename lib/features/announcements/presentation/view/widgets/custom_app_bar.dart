@@ -1,4 +1,5 @@
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
+import 'package:ai_eru_tawasol/features/home/presentation/view/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -7,7 +8,6 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDoctor = true;
     return Padding(
       padding: const EdgeInsets.only(left: 16, right: 16, top: 32),
       child: Row(

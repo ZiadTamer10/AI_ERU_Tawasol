@@ -21,7 +21,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDoctor = false;
     return Scaffold(
       body: pages[currentIndex],
       bottomNavigationBar: !isDoctor
@@ -34,3 +33,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }
+
+// TODO: Replace with real user role from backend / state management
+final bool isDoctor = true;

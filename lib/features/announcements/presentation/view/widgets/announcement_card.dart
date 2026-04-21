@@ -3,8 +3,8 @@ import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class AnnouncementData extends StatelessWidget {
-  const AnnouncementData({super.key});
+class AnnouncementCard extends StatelessWidget {
+  const AnnouncementCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,22 +63,17 @@ class AnnouncementData extends StatelessWidget {
                   ),
                   Align(
                     alignment: Alignment.centerRight,
-                    child: RichText(
-                      text: TextSpan(
+                    child: GestureDetector(
+                      onTap: () {
+                        print('Read full details clicked');
+                      },
+                      child: Text(
+                        "Read full details ➜",
                         style: Styles.textStyle20.copyWith(
-                          color: Color(0xff6B5E5E),
-                          fontWeight: FontWeight.w400,
+                          color: kPrimaryColor,
+                          fontSize: 19,
+                          fontWeight: FontWeight.w500,
                         ),
-                        children: [
-                          TextSpan(
-                            text: "Read full details➔",
-                            style: const TextStyle(color: kPrimaryColor),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                print("Read full details clicked");
-                              },
-                          ),
-                        ],
                       ),
                     ),
                   ),

@@ -1,4 +1,4 @@
-import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/announcement_data.dart';
+import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/announcement_card.dart';
 import 'package:flutter/material.dart';
 
 class AnnouncementDataSliverList extends StatelessWidget {
@@ -10,7 +10,7 @@ class AnnouncementDataSliverList extends StatelessWidget {
       delegate: SliverChildBuilderDelegate((context, index) {
         return const Padding(
           padding: EdgeInsets.only(bottom: 20),
-          child: AnnouncementData(),
+          child: AnnouncementCard(),
         );
       }),
     );

@@ -1,4 +1,5 @@
 import 'package:ai_eru_tawasol/features/home/presentation/view/widgets/home_bottom_navigation_bar.dart';
+import 'package:ai_eru_tawasol/features/home/presentation/view/widgets/home_floating_action_button.dart.dart';
 import 'package:ai_eru_tawasol/features/home/presentation/view/widgets/pages.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +27,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         currentIndex: currentIndex,
         onTap: onItemTapped,
       ),
+      floatingActionButton: HomeFloatingActionButton(),
     );
   }
 }

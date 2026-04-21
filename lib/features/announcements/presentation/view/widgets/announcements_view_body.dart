@@ -1,5 +1,5 @@
-import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/announcement_data_list_view.dart';
 import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/custom_app_bar.dart';
+import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/no_announcement_data.dart';
 import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/welcome_text.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +23,7 @@ class AnnouncementsViewBody extends StatelessWidget {
             ],
           ),
         ),
-        AnnouncementDataSliverList(),
+        SliverToBoxAdapter(child: NoAnnouncementData()),
       ],
     );
   }

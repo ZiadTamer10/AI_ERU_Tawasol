@@ -21,13 +21,16 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDoctor = false;
     return Scaffold(
       body: pages[currentIndex],
-      bottomNavigationBar: HomeBottomNavigationBar(
-        currentIndex: currentIndex,
-        onTap: onItemTapped,
-      ),
-      floatingActionButton: HomeFloatingActionButton(),
+      bottomNavigationBar: !isDoctor
+          ? HomeBottomNavigationBar(
+              currentIndex: currentIndex,
+              onTap: onItemTapped,
+            )
+          : null,
+      floatingActionButton: isDoctor ? HomeFloatingActionButton() : null,
     );
   }
 }

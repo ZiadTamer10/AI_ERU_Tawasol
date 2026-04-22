@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/features/cousres/presentation/view/widgets/course_details_view_body.dart';
 import 'package:flutter/material.dart';
 
 class CourseDetailsView extends StatelessWidget {
@@ -5,6 +6,9 @@ class CourseDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: CourseDetailsViewBody(),
+    );
   }
 }

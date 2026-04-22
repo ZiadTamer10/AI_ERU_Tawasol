@@ -4,6 +4,7 @@ import 'package:ai_eru_tawasol/features/authentication/presentation/manager/forg
 import 'package:ai_eru_tawasol/features/authentication/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/forget_password_view.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/login_view.dart';
+import 'package:ai_eru_tawasol/features/cousres/presentation/view/course_details_view.dart';
 import 'package:ai_eru_tawasol/features/home/presentation/view/home_view.dart';
 import 'package:ai_eru_tawasol/features/onboarding/presentation/view/on_boarding_view.dart';
 import 'package:ai_eru_tawasol/features/splash/presentation/view/splash_view.dart';
@@ -15,6 +16,7 @@ class AppRouter {
   static const kOnBoardingView = '/onBoardingView';
   static const kForgetPasswordView = '/forgetPasswordView';
   static const kHomeView = '/homeView';
+  static const kCourseDetailsView = '/courseDetailsView';
   static final GoRouter router = GoRouter(
     routes: [
       GoRoute(path: '/', builder: (context, state) => SplashView()),
@@ -37,6 +39,10 @@ class AppRouter {
         ),
       ),
       GoRoute(path: kHomeView, builder: (context, state) => HomeView()),
+      GoRoute(
+        path: kCourseDetailsView,
+        builder: (context, state) => CourseDetailsView(),
+      ),
     ],
   );
 }

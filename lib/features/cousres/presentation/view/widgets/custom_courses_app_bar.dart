@@ -8,7 +8,14 @@ class CustomCoursesAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 16, right: 16, top: 32),
-      child: Text('Courses', style: Styles.textStyle36),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Courses', style: Styles.textStyle36),
+          SizedBox(height: 20),
+          Text('Explore your Courses!', style: Styles.textStyle18),
+        ],
+      ),
     );
   }
 }

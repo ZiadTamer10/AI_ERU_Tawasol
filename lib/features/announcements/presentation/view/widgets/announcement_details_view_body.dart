@@ -1,4 +1,4 @@
-import 'package:ai_eru_tawasol/core/utils/styles.dart';
+import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/custom_announcement_deetails_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class AnnouncementDetailsViewBody extends StatelessWidget {
@@ -7,17 +7,5 @@ class AnnouncementDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(children: [CustomAnnouncementDetailsAppBar()]);
-  }
-}
-
-class CustomAnnouncementDetailsAppBar extends StatelessWidget {
-  const CustomAnnouncementDetailsAppBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: Text('Announcement Details', style: Styles.textStyle22),
-      centerTitle: true,
-    );
   }
 }

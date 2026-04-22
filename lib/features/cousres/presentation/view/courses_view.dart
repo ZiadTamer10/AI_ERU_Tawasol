@@ -6,6 +6,6 @@ class CoursesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: CourserViewBody());
+    return Scaffold(backgroundColor: Colors.white, body: CourserViewBody());
   }
 }

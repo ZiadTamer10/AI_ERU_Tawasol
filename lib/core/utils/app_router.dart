@@ -1,4 +1,5 @@
 import 'package:ai_eru_tawasol/core/utils/service_locator.dart';
+import 'package:ai_eru_tawasol/features/announcements/presentation/view/announcement_details_view.dart';
 import 'package:ai_eru_tawasol/features/authentication/data/repos/auth_repo_impl.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/manager/forget_password_cubit/forget_password_cubit.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/manager/login_cubit/login_cubit.dart';
@@ -16,6 +17,7 @@ class AppRouter {
   static const kOnBoardingView = '/onBoardingView';
   static const kForgetPasswordView = '/forgetPasswordView';
   static const kHomeView = '/homeView';
+  static const kAnnouncementDetailsView = '/announcementDetailsView';
   static const kCourseDetailsView = '/courseDetailsView';
   static final GoRouter router = GoRouter(
     routes: [
@@ -39,6 +41,10 @@ class AppRouter {
         ),
       ),
       GoRoute(path: kHomeView, builder: (context, state) => HomeView()),
+      GoRoute(
+        path: kAnnouncementDetailsView,
+        builder: (context, state) => AnnouncementDetailsView(),
+      ),
       GoRoute(
         path: kCourseDetailsView,
         builder: (context, state) => CourseDetailsView(),

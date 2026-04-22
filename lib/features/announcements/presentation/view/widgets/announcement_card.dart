@@ -1,7 +1,9 @@
 import 'package:ai_eru_tawasol/constants.dart';
+import 'package:ai_eru_tawasol/core/utils/app_router.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/home/presentation/view/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class AnnouncementCard extends StatelessWidget {
   const AnnouncementCard({super.key});
@@ -65,7 +67,9 @@ class AnnouncementCard extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: GestureDetector(
                       onTap: () {
-                        print('Read full details clicked');
+                        GoRouter.of(
+                          context,
+                        ).push(AppRouter.kAnnouncementDetailsView);
                       },
                       child: Text(
                         isDoctor ? 'Edit➜' : "Read full details ➜",

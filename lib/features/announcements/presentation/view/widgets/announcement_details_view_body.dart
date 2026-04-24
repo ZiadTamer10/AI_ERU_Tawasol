@@ -1,4 +1,5 @@
 import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/custom_announcement_deetails_app_bar.dart';
+import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/uploaded_section.dart';
 import 'package:flutter/material.dart';
 
 class AnnouncementDetailsViewBody extends StatelessWidget {
@@ -6,6 +7,12 @@ class AnnouncementDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(children: [CustomAnnouncementDetailsAppBar()]);
+    return const Column(
+      children: [
+        CustomAnnouncementDetailsAppBar(),
+        SizedBox(height: 20),
+        UploadedSection(),
+      ],
+    );
   }
 }

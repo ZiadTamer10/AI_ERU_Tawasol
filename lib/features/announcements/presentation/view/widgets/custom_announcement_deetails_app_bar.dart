@@ -7,6 +7,7 @@ class CustomAnnouncementDetailsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.white,
       title: Text('Announcement Details', style: Styles.textStyle22),
       centerTitle: true,
     );

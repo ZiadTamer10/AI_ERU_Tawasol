@@ -6,6 +6,9 @@ class AnnouncementDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: AnnouncementDetailsViewBody());
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: AnnouncementDetailsViewBody(),
+    );
   }
 }

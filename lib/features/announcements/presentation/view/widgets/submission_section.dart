@@ -8,7 +8,7 @@ class SubmissionSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSubmitted = true;
+    final bool isSubmitted = false;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(

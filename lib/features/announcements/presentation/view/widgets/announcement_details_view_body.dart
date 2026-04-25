@@ -23,8 +23,6 @@ class AnnouncementDetailsViewBody extends StatelessWidget {
 
           if (type != 'quiz') const AttachmentSection(),
           if (type == 'assignment') const SubmissionSection(),
-          if (type == 'quiz')
-            ElevatedButton(onPressed: () {}, child: Text("Start Quiz")),
         ],
       ),
     );

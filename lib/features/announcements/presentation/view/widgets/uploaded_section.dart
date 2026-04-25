@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/constants.dart';
 import 'package:ai_eru_tawasol/core/utils/assets.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,15 @@ class UploadedSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Lecture 4 is Uploaded', style: Styles.textStyle22),
-              SizedBox(height: 15),
+              SizedBox(height: 6),
+              Text(
+                'Advanced Robotics',
+                style: Styles.textStyle18.copyWith(
+                  color: kPrimaryColor,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 6),
               Row(
                 spacing: 10,
                 children: [

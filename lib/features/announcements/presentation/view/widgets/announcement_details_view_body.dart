@@ -10,18 +10,21 @@ class AnnouncementDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String type = 'assignment'; // lecture / assignment / quiz
     return SingleChildScrollView(
-      child: const Column(
+      child: Column(
         children: [
-          CustomAnnouncementDetailsAppBar(),
-          SizedBox(height: 20),
-          UploadedSection(),
-          SizedBox(height: 30),
-          LetterSection(),
-          SizedBox(height: 30),
-          AttachmentSection(),
-          SizedBox(height: 20),
-          SubmissionSection(),
+          const CustomAnnouncementDetailsAppBar(),
+          const SizedBox(height: 20),
+          const UploadedSection(),
+          const SizedBox(height: 30),
+          const LetterSection(),
+          const SizedBox(height: 30),
+
+          if (type != 'quiz') const AttachmentSection(),
+          if (type == 'assignment') const SubmissionSection(),
+          if (type == 'quiz')
+            ElevatedButton(onPressed: () {}, child: Text("Start Quiz")),
         ],
       ),
     );

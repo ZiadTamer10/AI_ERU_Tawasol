@@ -6,6 +6,12 @@ class AssetsData {
   static const String onBoarding5 = 'assets/images/svg/on_boarding5.svg';
   static const String announcement = 'assets/images/svg/announcement.svg';
   static const String pdfIcon = 'assets/images/svg/pdf_icon.svg';
+  static const String docIcon = 'assets/images/svg/doc_icon.svg';
+  static const String pptIcon = 'assets/images/svg/ppt_icon.svg';
+  static const String xlsIcon = 'assets/images/svg/xls_icon.svg';
+  static const String videoIcon = 'assets/images/svg/video_icon.svg';
+  static const String imageIcon = 'assets/images/svg/image_icon.svg';
+  static const String linkIcon = 'assets/images/svg/link_icon.svg';
   static const String logo2 = 'assets/images/logo 1.png';
   static const String login = 'assets/images/login.png';
 }

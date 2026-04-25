@@ -1,10 +1,11 @@
-import 'package:ai_eru_tawasol/core/utils/assets.dart';
+import 'package:ai_eru_tawasol/core/utils/attachment_helper.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class AttachmentCard extends StatelessWidget {
-  const AttachmentCard({super.key});
+  const AttachmentCard({super.key, required this.type});
+
+  final String type;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class AttachmentCard extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 8),
-            child: SvgPicture.asset(AssetsData.pdfIcon, height: 60),
+            child: AttachmentHelper.getIcon(type),
           ),
           Spacer(),
           Column(
@@ -30,10 +31,7 @@ class AttachmentCard extends StatelessWidget {
             ],
           ),
           Spacer(flex: 9),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.file_download_outlined, size: 32),
-          ),
+          AttachmentHelper.getAction(type),
         ],
       ),
     );

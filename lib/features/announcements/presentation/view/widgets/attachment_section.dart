@@ -14,7 +14,7 @@ class AttachmentSection extends StatelessWidget {
         children: [
           Text('Attachments', style: Styles.textStyle22),
           SizedBox(height: 10),
-          AttachmentCard(),
+          AttachmentCard(type: 'pdf'),
         ],
       ),
     );

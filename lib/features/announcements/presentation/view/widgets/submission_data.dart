@@ -23,11 +23,7 @@ class SubmissionData extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
-                  child: SvgPicture.asset(
-                    AssetsData.pdfIcon,
-                    color: Colors.blue,
-                    height: 60,
-                  ),
+                  child: SvgPicture.asset(AssetsData.docIcon, height: 60),
                 ),
                 Spacer(),
                 Column(

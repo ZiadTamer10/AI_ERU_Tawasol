@@ -12,6 +12,7 @@ class AnnouncementDetailsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final String type = 'assignment'; // lecture / assignment / quiz
     return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
       child: Column(
         children: [
           const CustomAnnouncementDetailsAppBar(),

@@ -2,6 +2,7 @@ import 'package:ai_eru_tawasol/core/utils/assets.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SubmissionData extends StatelessWidget {
   const SubmissionData({super.key});
@@ -29,18 +30,15 @@ class SubmissionData extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('my_solution.dox', style: Styles.textStyle18),
+                    Text('my_solution.docx', style: Styles.textStyle18),
                     Text('2.3 MB', style: Styles.textStyle18),
                   ],
                 ),
                 Spacer(flex: 9),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.download_done_sharp,
-                    color: Colors.green,
-                    size: 32,
-                  ),
+                FaIcon(
+                  FontAwesomeIcons.circleCheck,
+                  color: Colors.green,
+                  size: 32,
                 ),
               ],
             ),

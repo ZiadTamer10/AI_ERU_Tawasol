@@ -15,13 +15,13 @@ class AttachmentSection extends StatelessWidget {
         children: [
           Text('Attachments', style: Styles.textStyle22),
           SizedBox(height: 10),
-
           AttachmentCard(
             type: AttachmentTypes.pdf,
             fileName: 'lecture_image.png',
             size: '2.3 MB',
             url: 'https://i.ytimg.com/vi/lRdXqvpuVMk/hq720.jpg',
           ),
+          SizedBox(height: 10),
         ],
       ),
     );

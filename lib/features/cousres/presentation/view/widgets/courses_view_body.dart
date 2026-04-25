@@ -10,7 +10,7 @@ class CoursesViewBody extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

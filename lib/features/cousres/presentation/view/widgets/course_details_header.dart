@@ -7,74 +7,61 @@ class CourseDetailsHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        // 🔵 الخلفية
-        Container(
-          height: 220,
-          width: double.infinity,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(AssetsData.course),
-              fit: BoxFit.fill,
-            ),
-
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(30),
-              bottomRight: Radius.circular(30),
+    return SizedBox(
+      height: 220,
+      width: double.infinity,
+      child: Stack(
+        children: [
+          // Background
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(AssetsData.course),
+                fit: BoxFit.cover,
+              ),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30),
+              ),
             ),
           ),
-        ),
 
-        // 🔙 زرار الرجوع
-        SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            child: Row(
+          // Back button
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: IconButton(
+                onPressed: () => Navigator.pop(context),
+                icon: const Icon(Icons.arrow_back, color: Colors.white),
+              ),
+            ),
+          ),
+
+          // Text content
+          Positioned(
+            bottom: 20,
+            left: 16,
+            right: 16,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(Icons.arrow_back, color: Colors.white),
+                Text(
+                  "Advanced Robotics",
+                  style: Styles.textStyle22.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  "Dr. Fatima Al-Mansour",
+                  style: Styles.textStyle18.copyWith(color: Colors.white70),
                 ),
               ],
             ),
           ),
-        ),
-
-        // 🧠 محتوى الكورس
-        Positioned(
-          top: 140,
-          left: 16,
-          right: 16,
-          child: Row(
-            children: [
-              // 🖼️ صورة الكورس
-              const SizedBox(width: 16),
-
-              // 📄 النصوص
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Data Structures",
-                    style: Styles.textStyle22.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  Text(
-                    "Dr. Ahmed Sayed",
-                    style: Styles.textStyle18.copyWith(color: Colors.white70),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

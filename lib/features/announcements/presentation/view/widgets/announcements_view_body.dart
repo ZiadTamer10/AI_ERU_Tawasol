@@ -9,6 +9,7 @@ class AnnouncementsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool hasData = false;
     return CustomScrollView(
       physics: BouncingScrollPhysics(),
       slivers: [
@@ -23,7 +24,10 @@ class AnnouncementsViewBody extends StatelessWidget {
             ],
           ),
         ),
-        AnnouncementDataSliverList(),
+
+        hasData
+            ? AnnouncementDataSliverList()
+            : SliverToBoxAdapter(child: NoAnnouncementData()),
       ],
     );
   }

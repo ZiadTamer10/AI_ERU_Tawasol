@@ -55,10 +55,8 @@ class AnnouncementCard extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 6),
-                  Text('Announcement Details', style: Styles.textStyle20),
-                  const SizedBox(height: 6),
                   Text(
-                    'Project submissions are due of studies, wishing your dessenal and facility etc.',
+                    'Lecture 4 is Uploaded',
                     style: Styles.textStyle20.copyWith(
                       fontWeight: FontWeight.w400,
                     ),

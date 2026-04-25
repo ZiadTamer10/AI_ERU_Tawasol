@@ -3,35 +3,44 @@ import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class AttachmentCard extends StatelessWidget {
-  const AttachmentCard({super.key, required this.type});
+  const AttachmentCard({
+    super.key,
+    required this.type,
+    required this.fileName,
+    required this.size,
+    this.url,
+  });
 
   final String type;
+  final String fileName;
+  final String size;
+  final String? url;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 80,
       decoration: BoxDecoration(
-        color: Color(0xffF9F9F9),
-        border: Border.all(color: Color(0xffC4C4C4)),
+        color: const Color(0xffF9F9F9),
+        border: Border.all(color: const Color(0xffC4C4C4)),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 8),
-            child: AttachmentHelper.getIcon(type),
+          const SizedBox(width: 8),
+          AttachmentHelper.buildPreviewWidget(type, url: url),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(fileName, style: Styles.textStyle18),
+                Text(size, style: Styles.textStyle18),
+              ],
+            ),
           ),
-          Spacer(),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('lecture4.pdf', style: Styles.textStyle18),
-              Text('2.4 MB', style: Styles.textStyle18),
-            ],
-          ),
-          Spacer(flex: 9),
-          AttachmentHelper.getAction(type),
+          AttachmentHelper.buildActionButton(type, url: url),
         ],
       ),
     );

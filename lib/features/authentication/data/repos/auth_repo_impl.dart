@@ -1,4 +1,4 @@
-import 'package:ai_eru_tawasol/core/utils/auth_services.dart';
+import 'package:ai_eru_tawasol/core/services/auth_services.dart';
 import 'package:ai_eru_tawasol/core/errors/auth_failure.dart';
 import 'package:ai_eru_tawasol/features/authentication/data/repos/auth_repo.dart';
 import 'package:dartz/dartz.dart';

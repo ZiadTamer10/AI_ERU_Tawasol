@@ -1,4 +1,4 @@
-import 'package:ai_eru_tawasol/core/utils/local_storage_services.dart';
+import 'package:ai_eru_tawasol/core/services/local_storage_services.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_button.dart';

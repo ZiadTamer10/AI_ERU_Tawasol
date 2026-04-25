@@ -22,10 +22,13 @@ class UploadedSection extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
             ),
 
-            child: SvgPicture.asset(
-              AssetsData.announcement,
-              height: 80,
-              color: Colors.white,
+            child: Center(
+              child: SvgPicture.asset(
+                AssetsData.announcement,
+                height: 60,
+                width: 60,
+                color: Colors.white,
+              ),
             ),
           ),
           Column(

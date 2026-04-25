@@ -1,5 +1,5 @@
 import 'package:ai_eru_tawasol/core/utils/app_router.dart';
-import 'package:ai_eru_tawasol/core/utils/local_storage_services.dart';
+import 'package:ai_eru_tawasol/core/services/local_storage_services.dart';
 import 'package:ai_eru_tawasol/features/splash/presentation/view/widgets/logo_and_title.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

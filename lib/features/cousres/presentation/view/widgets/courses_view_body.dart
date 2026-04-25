@@ -1,4 +1,3 @@
-import 'package:ai_eru_tawasol/features/cousres/presentation/view/widgets/course_card.dart';
 import 'package:ai_eru_tawasol/features/cousres/presentation/view/widgets/courses_list_view.dart';
 import 'package:ai_eru_tawasol/features/cousres/presentation/view/widgets/custom_courses_app_bar.dart';
 import 'package:flutter/material.dart';

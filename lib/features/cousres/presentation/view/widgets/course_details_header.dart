@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/core/utils/assets.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,11 @@ class CourseDetailsHeader extends StatelessWidget {
           height: 220,
           width: double.infinity,
           decoration: const BoxDecoration(
-            color: Color(0xff0F7B7B),
+            image: DecorationImage(
+              image: AssetImage(AssetsData.course),
+              fit: BoxFit.fill,
+            ),
+
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(30),
               bottomRight: Radius.circular(30),
@@ -40,26 +45,12 @@ class CourseDetailsHeader extends StatelessWidget {
 
         // 🧠 محتوى الكورس
         Positioned(
-          top: 80,
+          top: 140,
           left: 16,
           right: 16,
           child: Row(
             children: [
               // 🖼️ صورة الكورس
-              Container(
-                height: 80,
-                width: 80,
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: const Icon(
-                  Icons.computer,
-                  color: Colors.white,
-                  size: 40,
-                ),
-              ),
-
               const SizedBox(width: 16),
 
               // 📄 النصوص

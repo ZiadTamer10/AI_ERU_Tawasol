@@ -27,8 +27,6 @@ class AttachmentHelper {
         return SvgPicture.asset(AssetsData.xlsIcon, height: 60);
       case 'video':
         return SvgPicture.asset(AssetsData.videoIcon, height: 60);
-      // case 'image':
-      //   return SvgPicture.asset(AssetsData.imageIcon, height: 60);
       case 'link':
         return SvgPicture.asset(AssetsData.linkIcon, height: 60);
       default:

@@ -4,6 +4,18 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class AttachmentHelper {
   static Widget getIcon(String type) {
+    if (type == 'image') {
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Image.network(
+          'https://i.ytimg.com/vi/lRdXqvpuVMk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC2t7DLbhJyZl1HQUkJUPwOLUJyQw',
+          height: 60,
+          width: 60,
+          fit: BoxFit.cover,
+        ),
+      );
+    }
+
     switch (type) {
       case 'pdf':
         return SvgPicture.asset(AssetsData.pdfIcon, height: 60);
@@ -15,8 +27,8 @@ class AttachmentHelper {
         return SvgPicture.asset(AssetsData.xlsIcon, height: 60);
       case 'video':
         return SvgPicture.asset(AssetsData.videoIcon, height: 60);
-      case 'image':
-        return SvgPicture.asset(AssetsData.imageIcon, height: 60);
+      // case 'image':
+      //   return SvgPicture.asset(AssetsData.imageIcon, height: 60);
       case 'link':
         return SvgPicture.asset(AssetsData.linkIcon, height: 60);
       default:

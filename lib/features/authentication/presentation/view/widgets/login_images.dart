@@ -9,7 +9,7 @@ class LoginImages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset(AssetsData.logo2, height: 90),
+        Image.asset(AssetsData.logo, height: 90),
         Text(
           'AI Connect',
           style: TextStyle(

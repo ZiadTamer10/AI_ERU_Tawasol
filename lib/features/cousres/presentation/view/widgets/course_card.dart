@@ -33,7 +33,7 @@ class CourseCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Image.asset(AssetsData.logo2, color: Colors.greenAccent),
+              Image.asset(AssetsData.logo, height: 50),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -13,7 +13,7 @@ class CustomCoursesAppBar extends StatelessWidget {
         children: [
           Text('Courses', style: Styles.textStyle36),
           SizedBox(height: 20),
-          Text('Explore your Courses!', style: Styles.textStyle18),
+          Text('Unlock Your Knowledge 📚', style: Styles.textStyle20),
         ],
       ),
     );

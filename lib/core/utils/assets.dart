@@ -12,6 +12,8 @@ class AssetsData {
   static const String videoIcon = 'assets/images/svg/video_icon.svg';
   static const String imageIcon = 'assets/images/svg/image_icon.svg';
   static const String linkIcon = 'assets/images/svg/link_icon.svg';
-  static const String logo2 = 'assets/images/logo 1.png';
-  static const String login = 'assets/images/login.png';
+  static const String logo = 'assets/images/png/logo 1.png';
+  static const String login = 'assets/images/png/login.png';
+  static const String noAnnouncement = 'assets/images/png/no_announcement.png';
+  static const String course = 'assets/images/png/course.jpg';
 }

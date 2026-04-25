@@ -10,7 +10,7 @@ class LogoAndTitle extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(AssetsData.logo2),
+        Image.asset(AssetsData.logo),
         Stack(
           children: [
             Text(

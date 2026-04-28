@@ -2,6 +2,7 @@ import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/accoun
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_profile_app_bar.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/preferences_section.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/profile_sectio.dart';
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/support_section.dart';
 import 'package:flutter/material.dart';
 
 class ProfileViewBody extends StatelessWidget {
@@ -20,6 +21,8 @@ class ProfileViewBody extends StatelessWidget {
           AccountSection(),
           SizedBox(height: 30),
           PreferencesSection(),
+          SizedBox(height: 20),
+          SupportSection(),
         ],
       ),
     );

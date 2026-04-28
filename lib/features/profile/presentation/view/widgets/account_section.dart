@@ -10,37 +10,31 @@ class AccountSection extends StatelessWidget {
     return CustomContainerSection(
       children: [
         CustomListTile(
+          onTap: () {},
           icon: Icons.person_outline_rounded,
           title: 'User Name',
           subtitle: 'Ziad Tamer',
-          trailing: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: Color(0xff9E9D97),
-            ),
+          trailing: Icon(
+            Icons.arrow_forward_ios_rounded,
+            color: Color(0xff9E9D97),
           ),
         ),
         Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
         CustomListTile(
+          onTap: () {},
           icon: Icons.lock_outline_rounded,
-          title: 'User Name',
+          title: 'Password',
           subtitle: '********',
-          trailing: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.visibility, size: 28, color: Color(0xff9E9D97)),
-          ),
+          trailing: Icon(Icons.visibility, size: 28, color: Color(0xff9E9D97)),
         ),
         Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
         CustomListTile(
+          onTap: () {},
           icon: Icons.password_rounded,
           title: 'Change Password',
-          trailing: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: Color(0xff9E9D97),
-            ),
+          trailing: Icon(
+            Icons.arrow_forward_ios_rounded,
+            color: Color(0xff9E9D97),
           ),
         ),
       ],

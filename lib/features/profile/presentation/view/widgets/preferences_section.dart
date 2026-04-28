@@ -12,64 +12,52 @@ class PreferencesSection extends StatelessWidget {
       title: 'Preferences',
       children: [
         CustomListTile(
+          onTap: () {},
           icon: Icons.brightness_5_outlined,
           title: 'Theme Mode',
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
+            spacing: 10,
             children: [
               Text(
                 'Light',
                 style: Styles.textStyle16.copyWith(color: Color(0xff9E9D97)),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  color: Color(0xff9E9D97),
-                ),
-              ),
+              Icon(Icons.arrow_forward_ios_rounded, color: Color(0xff9E9D97)),
             ],
           ),
         ),
         Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
         CustomListTile(
+          onTap: () {},
           icon: Icons.notifications_none_rounded,
           title: 'Notifications',
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
+            spacing: 10,
             children: [
               Text(
                 'Muted',
                 style: Styles.textStyle16.copyWith(color: Color(0xff9E9D97)),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  color: Color(0xff9E9D97),
-                ),
-              ),
+              Icon(Icons.arrow_forward_ios_rounded, color: Color(0xff9E9D97)),
             ],
           ),
         ),
         Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
         CustomListTile(
+          onTap: () {},
           icon: Icons.language_rounded,
           title: 'Language',
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
+            spacing: 10,
             children: [
               Text(
                 'English',
                 style: Styles.textStyle16.copyWith(color: Color(0xff9E9D97)),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  color: Color(0xff9E9D97),
-                ),
-              ),
+              Icon(Icons.arrow_forward_ios_rounded, color: Color(0xff9E9D97)),
             ],
           ),
         ),

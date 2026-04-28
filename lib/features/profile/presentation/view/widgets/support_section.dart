@@ -10,26 +10,22 @@ class SupportSection extends StatelessWidget {
     return CustomContainerSection(
       children: [
         CustomListTile(
+          onTap: () {},
           icon: Icons.headset_mic_outlined,
           title: 'Help&Support',
-          trailing: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: Color(0xff9E9D97),
-            ),
+          trailing: Icon(
+            Icons.arrow_forward_ios_rounded,
+            color: Color(0xff9E9D97),
           ),
         ),
         Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
         CustomListTile(
+          onTap: () {},
           icon: Icons.info_outline_rounded,
           title: 'About Me',
-          trailing: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: Color(0xff9E9D97),
-            ),
+          trailing: Icon(
+            Icons.arrow_forward_ios_rounded,
+            color: Color(0xff9E9D97),
           ),
         ),
       ],

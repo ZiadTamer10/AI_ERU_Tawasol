@@ -8,16 +8,19 @@ class CustomListTile extends StatelessWidget {
     required this.title,
     this.subtitle,
     this.trailing,
+    required this.onTap,
   });
 
   final IconData icon;
   final String title;
   final String? subtitle;
   final Widget? trailing;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: onTap,
       leading: Icon(icon, size: 36),
       title: Text(
         title,

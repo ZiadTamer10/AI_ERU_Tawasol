@@ -15,10 +15,11 @@ class CustomContainerSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            title ?? '',
-            style: Styles.textStyle20.copyWith(color: kPrimaryColor),
-          ),
+          if (title != null)
+            Text(
+              title!,
+              style: Styles.textStyle20.copyWith(color: kPrimaryColor),
+            ),
           const SizedBox(height: 10),
           Container(
             width: double.infinity,

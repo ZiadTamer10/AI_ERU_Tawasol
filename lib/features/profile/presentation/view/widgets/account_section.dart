@@ -30,7 +30,10 @@ class AccountSection extends StatelessWidget {
               subtitle: 'Ziad Tamer',
               trailing: IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.arrow_forward_ios_rounded),
+                icon: Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Color(0xff9E9D97),
+                ),
               ),
             ),
             Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
@@ -40,7 +43,11 @@ class AccountSection extends StatelessWidget {
               subtitle: '********',
               trailing: IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.visibility, size: 28),
+                icon: Icon(
+                  Icons.visibility,
+                  size: 28,
+                  color: Color(0xff9E9D97),
+                ),
               ),
             ),
             Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
@@ -49,7 +56,10 @@ class AccountSection extends StatelessWidget {
               title: 'Change Password',
               trailing: IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.arrow_forward_ios_rounded),
+                icon: Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Color(0xff9E9D97),
+                ),
               ),
             ),
           ],

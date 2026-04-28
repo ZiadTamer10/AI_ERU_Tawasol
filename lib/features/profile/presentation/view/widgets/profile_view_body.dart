@@ -1,5 +1,6 @@
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/account_section.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_profile_app_bar.dart';
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/log_out_button.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/preferences_section.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/profile_section.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/support_section.dart';
@@ -23,6 +24,8 @@ class ProfileViewBody extends StatelessWidget {
           PreferencesSection(),
           SizedBox(height: 20),
           SupportSection(),
+          SizedBox(height: 30),
+          LogOutButton(onPressed: () {}),
         ],
       ),
     );

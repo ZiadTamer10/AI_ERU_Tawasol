@@ -37,7 +37,7 @@ class LoginView extends StatelessWidget {
             );
           }
         },
-        child: LoginViewBody(),
+        child: SafeArea(child: LoginViewBody()),
       ),
     );
   }

@@ -9,7 +9,7 @@ class ForgetPasswordView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(backgroundColor: Colors.white),
-      body: ForgetPasswordViewBody(),
+      body: SafeArea(child: ForgetPasswordViewBody()),
     );
   }
 }

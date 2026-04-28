@@ -9,15 +9,17 @@ class CoursesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ListView(
-        padding: EdgeInsets.zero,
-        physics: const BouncingScrollPhysics(),
-        children: const [
-          CustomCoursesAppBar(),
-          SizedBox(height: 10),
-          Divider(color: Color(0xffC4C4C4), thickness: 2),
-          CoursesListView(),
-        ],
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          physics: const BouncingScrollPhysics(),
+          children: const [
+            CustomCoursesAppBar(),
+            SizedBox(height: 10),
+            Divider(color: Color(0xffC4C4C4), thickness: 2),
+            CoursesListView(),
+          ],
+        ),
       ),
     );
   }

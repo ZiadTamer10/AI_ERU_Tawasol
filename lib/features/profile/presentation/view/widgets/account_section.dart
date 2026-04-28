@@ -24,61 +24,75 @@ class AccountSection extends StatelessWidget {
         ),
         child: Column(
           children: [
-            ListTile(
-              leading: Icon(Icons.person_outline_rounded, size: 36),
-              title: Text(
-                'User Name',
-                style: Styles.textStyle18.copyWith(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              subtitle: Text(
-                'Ziad Tamer',
-                style: Styles.textStyle18.copyWith(color: Color(0xff9E9D97)),
-              ),
+            CustomListTile(
+              icon: Icons.person_outline_rounded,
+              title: 'User Name',
+              subtitle: 'Ziad Tamer',
               trailing: IconButton(
-                icon: Icon(Icons.arrow_forward_ios_rounded),
                 onPressed: () {},
+                icon: Icon(Icons.arrow_forward_ios_rounded),
               ),
             ),
             Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
-            ListTile(
-              leading: Icon(Icons.lock_outline_rounded, size: 36),
-              title: Text(
-                'Password',
-                style: Styles.textStyle18.copyWith(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              subtitle: Text(
-                '********',
-                style: Styles.textStyle18.copyWith(color: Color(0xff9E9D97)),
-              ),
+            CustomListTile(
+              icon: Icons.lock_outline_rounded,
+              title: 'User Name',
+              subtitle: '********',
               trailing: IconButton(
+                onPressed: () {},
                 icon: Icon(Icons.visibility, size: 28),
-                onPressed: () {},
               ),
             ),
             Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
-            ListTile(
-              leading: Icon(Icons.password_rounded, size: 36),
-              title: Text(
-                'Change Password',
-                style: Styles.textStyle18.copyWith(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+            CustomListTile(
+              icon: Icons.password_rounded,
+              title: 'Change Password',
               trailing: IconButton(
-                icon: Icon(Icons.arrow_forward_ios_rounded),
                 onPressed: () {},
+                icon: Icon(Icons.arrow_forward_ios_rounded),
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class CustomListTile extends StatelessWidget {
+  const CustomListTile({
+    super.key,
+    required this.icon,
+    required this.title,
+    this.subtitle,
+    this.trailing,
+  });
+
+  final IconData icon;
+  final String title;
+  final String? subtitle;
+  final Widget? trailing;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(icon, size: 36),
+      title: Text(
+        title,
+        style: Styles.textStyle18.copyWith(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      subtitle: subtitle != null
+          ? Text(
+              subtitle!,
+              style: Styles.textStyle18.copyWith(
+                color: const Color(0xff9E9D97),
+              ),
+            )
+          : null,
+      trailing: trailing,
     );
   }
 }

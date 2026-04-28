@@ -1,4 +1,3 @@
-import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/account_section.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_profile_app_bar.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/profile_sectio.dart';

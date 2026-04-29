@@ -1,4 +1,4 @@
-import 'package:ai_eru_tawasol/core/utils/styles.dart';
+import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_button.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_password_section.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/password_requirements.dart';
@@ -30,6 +30,8 @@ class ChangePasswordViewBody extends StatelessWidget {
             text: 'Contains uppercase letter',
             isValid: true,
           ),
+          SizedBox(height: 60),
+          CustomButton(text: 'Update Password', onPressed: () {}),
         ],
       ),
     );

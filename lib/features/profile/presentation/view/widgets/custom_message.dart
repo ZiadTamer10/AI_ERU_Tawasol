@@ -1,11 +1,10 @@
-import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomMessage extends StatelessWidget {
   const CustomMessage({super.key, required this.text, required this.icon});
 
   final String text;
-  final Icon icon;
+  final Widget icon;
 
   @override
   Widget build(BuildContext context) {
@@ -13,19 +12,43 @@ class CustomMessage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Container(
         width: double.infinity,
-        height: 100,
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Color(0xffD3E1FE),
-
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(20),
+          gradient: const LinearGradient(
+            colors: [Color(0xff62CFF4), Color(0xff2C67F2)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Color(0xff2C67F2).withOpacity(0.25),
+              blurRadius: 15,
+              offset: const Offset(0, 6),
+            ),
+          ],
         ),
         child: Row(
-          spacing: 20,
           children: [
-            Padding(padding: const EdgeInsets.only(left: 16), child: icon),
-            Text(
-              text,
-              style: Styles.textStyle18.copyWith(color: Colors.black54),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                shape: BoxShape.circle,
+              ),
+              child: icon,
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Text(
+                text,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  height: 1.4,
+                ),
+              ),
             ),
           ],
         ),

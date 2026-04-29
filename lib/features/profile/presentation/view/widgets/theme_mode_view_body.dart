@@ -52,7 +52,7 @@ class _ThemeModeViewBodyState extends State<ThemeModeViewBody> {
         ),
         Spacer(flex: 10),
         CustomMessage(
-          text: 'System Default will match\nyour device settings.',
+          text: 'System Default will match your device settings.',
           icon: FaIcon(FontAwesomeIcons.gear, color: Colors.blue, size: 36),
         ),
         Spacer(),

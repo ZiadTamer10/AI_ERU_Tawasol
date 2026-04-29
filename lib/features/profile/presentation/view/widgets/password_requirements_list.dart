@@ -7,11 +7,13 @@ class PasswordRequirementsList extends StatelessWidget {
     required this.hasMinLength,
     required this.hasNumber,
     required this.hasUpperCase,
+    required this.isMatch,
   });
 
   final bool hasMinLength;
   final bool hasNumber;
   final bool hasUpperCase;
+  final bool isMatch;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,8 @@ class PasswordRequirementsList extends StatelessWidget {
           text: 'Contains uppercase letter',
           isValid: hasUpperCase,
         ),
+        const SizedBox(height: 8),
+        PasswordRequirements(text: 'Passwords match', isValid: isMatch),
       ],
     );
   }

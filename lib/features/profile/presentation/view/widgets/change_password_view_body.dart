@@ -1,7 +1,6 @@
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_button.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_password_section.dart';
-import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/password_requirements.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/password_requirements_list.dart';
 import 'package:flutter/material.dart';
 
@@ -66,12 +65,11 @@ class _ChangePasswordViewBodyState extends State<ChangePasswordViewBody> {
           ),
           SizedBox(height: 30),
           PasswordRequirementsList(
+            isMatch: isMatch,
             hasMinLength: hasMinLength,
             hasNumber: hasNumber,
             hasUpperCase: hasUpperCase,
           ),
-          SizedBox(height: 20),
-          PasswordRequirements(text: 'Passwords match', isValid: isMatch),
           SizedBox(height: 60),
           CustomButton(text: 'Update Password', onPressed: () {}),
         ],

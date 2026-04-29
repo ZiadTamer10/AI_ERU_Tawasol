@@ -50,7 +50,9 @@ class PreferencesSection extends StatelessWidget {
         ),
         Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
         CustomListTile(
-          onTap: () {},
+          onTap: () {
+            GoRouter.of(context).push(AppRouter.kLanguageView);
+          },
           icon: Icons.language_rounded,
           title: 'Language',
           trailing: Row(

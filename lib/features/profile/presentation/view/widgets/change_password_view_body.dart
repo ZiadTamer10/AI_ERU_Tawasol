@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class ChangePasswordViewBody extends StatelessWidget {
@@ -5,6 +6,6 @@ class ChangePasswordViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column();
+    return Column(children: [AdditionalPagesAppBar(title: 'Change Password')]);
   }
 }

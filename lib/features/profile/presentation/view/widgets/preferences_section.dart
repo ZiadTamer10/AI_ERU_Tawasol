@@ -1,7 +1,9 @@
+import 'package:ai_eru_tawasol/core/utils/app_router.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_container_section.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_list_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class PreferencesSection extends StatelessWidget {
   const PreferencesSection({super.key});
@@ -12,7 +14,9 @@ class PreferencesSection extends StatelessWidget {
       title: 'Preferences',
       children: [
         CustomListTile(
-          onTap: () {},
+          onTap: () {
+            GoRouter.of(context).push(AppRouter.kThemeModeView);
+          },
           icon: Icons.brightness_5_outlined,
           title: 'Theme Mode',
           trailing: Row(

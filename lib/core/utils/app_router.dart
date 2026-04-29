@@ -9,6 +9,7 @@ import 'package:ai_eru_tawasol/features/cousres/presentation/view/course_details
 import 'package:ai_eru_tawasol/features/home/presentation/view/home_view.dart';
 import 'package:ai_eru_tawasol/features/onboarding/presentation/view/on_boarding_view.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/change_password_view.dart';
+import 'package:ai_eru_tawasol/features/profile/presentation/view/theme_mode_view.dart';
 import 'package:ai_eru_tawasol/features/splash/presentation/view/splash_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -21,6 +22,7 @@ class AppRouter {
   static const kAnnouncementDetailsView = '/announcementDetailsView';
   static const kCourseDetailsView = '/courseDetailsView';
   static const kChangePasswordView = '/changePasswordView';
+  static const kThemeModeView = '/themeModeView';
   static final GoRouter router = GoRouter(
     routes: [
       GoRoute(path: '/', builder: (context, state) => SplashView()),
@@ -54,6 +56,10 @@ class AppRouter {
       GoRoute(
         path: kChangePasswordView,
         builder: (context, state) => ChangePasswordView(),
+      ),
+      GoRoute(
+        path: kThemeModeView,
+        builder: (context, state) => ThemeModeView(),
       ),
     ],
   );

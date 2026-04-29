@@ -1,7 +1,9 @@
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_message.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/theme_mode_options.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/theme_mode_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ThemeModeViewBody extends StatefulWidget {
   const ThemeModeViewBody({super.key});
@@ -48,6 +50,12 @@ class _ThemeModeViewBodyState extends State<ThemeModeViewBody> {
           groupValue: selectedMode,
           onTap: () => selectMode(ThemeModeOptions.system),
         ),
+        Spacer(flex: 10),
+        CustomMessage(
+          text: 'System Default will match\nyour device settings.',
+          icon: FaIcon(FontAwesomeIcons.gear, color: Colors.blue, size: 36),
+        ),
+        Spacer(),
       ],
     );
   }

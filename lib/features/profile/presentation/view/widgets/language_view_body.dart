@@ -1,7 +1,7 @@
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_message.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/language_options.dart';
-import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/theme_mode_tile.dart';
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/settings_option_tile.dart';
 import 'package:flutter/material.dart';
 
 class LanguageViewBody extends StatefulWidget {
@@ -26,19 +26,19 @@ class _LanguageViewBodyState extends State<LanguageViewBody> {
       children: [
         AdditionalPagesAppBar(title: 'Language'),
         SizedBox(height: 40),
-        ThemeModeTile(
+        SettingsOptionTile<LanguageOptions>(
           title: 'English',
           subtitle: 'English',
-          langValue: LanguageOptions.english,
-          gValue: selectedMode,
+          value: LanguageOptions.english,
+          groupValue: selectedMode,
           onTap: () => selectMode(LanguageOptions.english),
         ),
         const SizedBox(height: 20),
-        ThemeModeTile(
+        SettingsOptionTile<LanguageOptions>(
           title: 'العربية',
           subtitle: 'Arabic',
-          langValue: LanguageOptions.arabic,
-          gValue: selectedMode,
+          value: LanguageOptions.arabic,
+          groupValue: selectedMode,
           onTap: () => selectMode(LanguageOptions.arabic),
         ),
         Spacer(flex: 10),

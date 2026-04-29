@@ -22,13 +22,7 @@ class CustomListTile extends StatelessWidget {
     return ListTile(
       onTap: onTap,
       leading: Icon(icon, size: 36),
-      title: Text(
-        title,
-        style: Styles.textStyle18.copyWith(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      title: Text(title, style: Styles.textStyle20),
       subtitle: subtitle != null
           ? Text(
               subtitle!,

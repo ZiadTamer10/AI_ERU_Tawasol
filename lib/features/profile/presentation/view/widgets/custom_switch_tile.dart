@@ -23,7 +23,7 @@ class CustomSwitchTile extends StatelessWidget {
     return ListTile(
       onTap: onTap,
       leading: Icon(icon, size: 36),
-      title: Text(title, style: Styles.textStyle18),
+      title: Text(title, style: Styles.textStyle20),
       trailing: Switch(
         value: value,
         onChanged: onChanged,

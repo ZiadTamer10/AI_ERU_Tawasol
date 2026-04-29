@@ -1,0 +1,1 @@
+enum LanguageOptions { english, arabic }

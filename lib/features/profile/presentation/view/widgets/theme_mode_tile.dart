@@ -1,20 +1,28 @@
+import 'package:ai_eru_tawasol/core/utils/styles.dart';
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/language_options.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/theme_mode_options.dart';
 import 'package:flutter/material.dart';
 
-class ThemeModeTile extends StatelessWidget {
-  const ThemeModeTile({
+class AdditionalTile extends StatelessWidget {
+  const AdditionalTile({
     super.key,
-    required this.icon,
+    this.icon,
     required this.title,
-    required this.value,
-    required this.groupValue,
+    this.value,
+    this.groupValue,
     required this.onTap,
+    this.subtitle,
+    this.langValue,
+    this.gValue,
   });
 
-  final IconData icon;
+  final IconData? icon;
   final String title;
-  final ThemeModeOptions value;
-  final ThemeModeOptions groupValue;
+  final String? subtitle;
+  final ThemeModeOptions? value;
+  final ThemeModeOptions? groupValue;
+  final LanguageOptions? langValue;
+  final LanguageOptions? gValue;
   final VoidCallback onTap;
 
   @override
@@ -22,8 +30,14 @@ class ThemeModeTile extends StatelessWidget {
     final bool isSelected = value == groupValue;
 
     return ListTile(
-      leading: Icon(icon, size: 28),
-      title: Text(title, style: const TextStyle(fontSize: 18)),
+      leading: icon != null ? Icon(icon, size: 28) : null,
+      title: Text(
+        title,
+        style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w400),
+      ),
+      subtitle: subtitle != null
+          ? Text(subtitle!, style: Styles.textStyle16)
+          : null,
       trailing: Icon(
         size: 28,
         isSelected ? Icons.radio_button_checked : Icons.radio_button_off,

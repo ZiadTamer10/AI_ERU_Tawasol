@@ -1,7 +1,9 @@
+import 'package:ai_eru_tawasol/core/utils/app_router.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/home/presentation/view/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -20,7 +22,9 @@ class CustomAppBar extends StatelessWidget {
               icon: const Icon(Icons.calendar_month_rounded, size: 32),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.kProfileView);
+              },
               icon: const Icon(Icons.person, size: 32),
             ),
           ] else ...[

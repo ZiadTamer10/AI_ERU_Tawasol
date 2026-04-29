@@ -3,9 +3,16 @@ import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom
 import 'package:flutter/material.dart';
 
 class CustomPasswordSection extends StatelessWidget {
-  const CustomPasswordSection({super.key, required this.title});
+  const CustomPasswordSection({
+    super.key,
+    required this.title,
+    this.controller,
+    this.onChanged,
+  });
 
   final String title;
+  final TextEditingController? controller;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +25,10 @@ class CustomPasswordSection extends StatelessWidget {
             title,
             style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w400),
           ),
-          CustomChangePasswordTextFieldForm(),
+          CustomChangePasswordTextFieldForm(
+            controller: controller,
+            onChanged: onChanged,
+          ),
         ],
       ),
     );

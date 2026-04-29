@@ -23,9 +23,9 @@ class ChangePasswordViewBody extends StatelessWidget {
           CustomPasswordSection(title: 'Confirm New Password'),
           SizedBox(height: 30),
           PasswordRequirements(text: 'At least 8 characters', isValid: true),
-          SizedBox(height: 30),
+          SizedBox(height: 10),
           PasswordRequirements(text: 'Contains a number', isValid: false),
-          SizedBox(height: 30),
+          SizedBox(height: 10),
           PasswordRequirements(
             text: 'Contains uppercase letter',
             isValid: true,

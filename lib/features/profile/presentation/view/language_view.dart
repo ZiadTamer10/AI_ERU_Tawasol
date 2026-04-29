@@ -6,6 +6,9 @@ class LanguageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.white, body: LanguageViewBody());
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(child: LanguageViewBody()),
+    );
   }
 }

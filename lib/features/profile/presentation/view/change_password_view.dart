@@ -8,7 +8,7 @@ class ChangePasswordView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ChangePasswordViewBody(),
+      body: SafeArea(child: ChangePasswordViewBody()),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_message.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/language_options.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/theme_mode_tile.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +41,12 @@ class _LanguageViewBodyState extends State<LanguageViewBody> {
           gValue: selectedMode,
           onTap: () => selectMode(LanguageOptions.arabic),
         ),
+        Spacer(flex: 10),
+        CustomMessage(
+          text: 'The app will restart to apply the new language.',
+          icon: Icon(Icons.language, color: Colors.blue, size: 36),
+        ),
+        Spacer(),
       ],
     );
   }

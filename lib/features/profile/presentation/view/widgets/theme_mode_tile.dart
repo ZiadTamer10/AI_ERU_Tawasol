@@ -3,8 +3,8 @@ import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/langua
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/theme_mode_options.dart';
 import 'package:flutter/material.dart';
 
-class AdditionalTile extends StatelessWidget {
-  const AdditionalTile({
+class ThemeModeTile extends StatelessWidget {
+  const ThemeModeTile({
     super.key,
     this.icon,
     required this.title,
@@ -28,6 +28,7 @@ class AdditionalTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isSelected = value == groupValue;
+    final bool isSelected2 = langValue == gValue;
 
     return ListTile(
       leading: icon != null ? Icon(icon, size: 28) : null,
@@ -40,7 +41,9 @@ class AdditionalTile extends StatelessWidget {
           : null,
       trailing: Icon(
         size: 28,
-        isSelected ? Icons.radio_button_checked : Icons.radio_button_off,
+        isSelected & isSelected2
+            ? Icons.radio_button_checked
+            : Icons.radio_button_off,
         color: isSelected ? Colors.blue : Colors.grey,
       ),
       onTap: onTap,

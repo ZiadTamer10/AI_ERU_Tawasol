@@ -27,7 +27,7 @@ class _ThemeModeViewBodyState extends State<ThemeModeViewBody> {
       children: [
         AdditionalPagesAppBar(title: 'Theme Mode'),
         const SizedBox(height: 40),
-        AdditionalTile(
+        ThemeModeTile(
           icon: Icons.wb_sunny_outlined,
           title: 'Light',
           value: ThemeModeOptions.light,
@@ -35,7 +35,7 @@ class _ThemeModeViewBodyState extends State<ThemeModeViewBody> {
           onTap: () => selectMode(ThemeModeOptions.light),
         ),
         const SizedBox(height: 20),
-        AdditionalTile(
+        ThemeModeTile(
           icon: Icons.nights_stay_outlined,
           title: 'Dark',
           value: ThemeModeOptions.dark,
@@ -43,7 +43,7 @@ class _ThemeModeViewBodyState extends State<ThemeModeViewBody> {
           onTap: () => selectMode(ThemeModeOptions.dark),
         ),
         const SizedBox(height: 20),
-        AdditionalTile(
+        ThemeModeTile(
           icon: Icons.phone_iphone_sharp,
           title: 'System Default',
           value: ThemeModeOptions.system,

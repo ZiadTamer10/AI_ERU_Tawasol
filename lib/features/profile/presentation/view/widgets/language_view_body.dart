@@ -25,7 +25,7 @@ class _LanguageViewBodyState extends State<LanguageViewBody> {
       children: [
         AdditionalPagesAppBar(title: 'Language'),
         SizedBox(height: 40),
-        AdditionalTile(
+        ThemeModeTile(
           title: 'English',
           subtitle: 'English',
           langValue: LanguageOptions.english,
@@ -33,7 +33,7 @@ class _LanguageViewBodyState extends State<LanguageViewBody> {
           onTap: () => selectMode(LanguageOptions.english),
         ),
         const SizedBox(height: 20),
-        AdditionalTile(
+        ThemeModeTile(
           title: 'العربية',
           subtitle: 'Arabic',
           langValue: LanguageOptions.arabic,

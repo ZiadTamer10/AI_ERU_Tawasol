@@ -71,7 +71,9 @@ class AboutMeViewBody extends StatelessWidget {
                 '1.0.0+1',
                 style: Styles.textStyle16.copyWith(color: Color(0xff9E9D97)),
               ),
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).push(AppRouter.kAppVersionView);
+              },
             ),
             Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
             CustomListTile(

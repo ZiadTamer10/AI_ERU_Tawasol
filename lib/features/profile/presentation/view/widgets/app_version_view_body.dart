@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class AppVersionViewBody extends StatelessWidget {
@@ -5,6 +6,11 @@ class AppVersionViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return Column(
+      children: [
+        AdditionalPagesAppBar(title: 'App Version'),
+        SizedBox(height: 20),
+      ],
+    );
   }
 }

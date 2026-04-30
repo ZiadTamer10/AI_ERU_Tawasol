@@ -16,4 +16,7 @@ class AssetsData {
   static const String login = 'assets/images/png/login.png';
   static const String noAnnouncement = 'assets/images/png/no_announcement.png';
   static const String course = 'assets/images/png/course.jpg';
+  static const String facebook = 'assets/images/svg/facebook.svg';
+  static const String snapchat2 = 'assets/images/svg/snapchat.svg';
+  static const String instagram = 'assets/images/svg/instagram.svg';
 }

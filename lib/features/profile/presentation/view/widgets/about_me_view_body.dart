@@ -1,10 +1,12 @@
 import 'package:ai_eru_tawasol/constants.dart';
+import 'package:ai_eru_tawasol/core/utils/assets.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_about_me_header.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_container_section.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_list_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class AboutMeViewBody extends StatelessWidget {
   const AboutMeViewBody({super.key});
@@ -68,6 +70,14 @@ class AboutMeViewBody extends StatelessWidget {
                 color: kPrimaryColor,
               ),
               title: 'Follow Us',
+              trailing: Row(
+                spacing: 10,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SvgPicture.asset(AssetsData.facebook),
+                  SvgPicture.asset(AssetsData.instagram, height: 32),
+                ],
+              ),
               onTap: () {},
             ),
           ],

@@ -22,7 +22,7 @@ class CustomAboutMeHeader extends StatelessWidget {
       children: [
         image,
         const SizedBox(height: 10),
-        Text(title, style: Styles.textStyle24.copyWith(fontSize: 30)),
+        Text(title, style: Styles.textStyle24.copyWith(fontSize: 28)),
         if (subTitile != null)
           Text(
             subTitile!,

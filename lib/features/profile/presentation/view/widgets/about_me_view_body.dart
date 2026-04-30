@@ -55,7 +55,9 @@ class AboutMeViewBody extends StatelessWidget {
                 Icons.arrow_forward_ios_rounded,
                 color: Color(0xff9E9D97),
               ),
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).push(AppRouter.kContactUsView);
+              },
             ),
             Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
             CustomListTile(
@@ -87,7 +89,6 @@ class AboutMeViewBody extends StatelessWidget {
                   SvgPicture.asset(AssetsData.instagram, height: 32),
                 ],
               ),
-              onTap: () {},
             ),
           ],
         ),

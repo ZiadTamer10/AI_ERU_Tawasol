@@ -13,14 +13,14 @@ class ContactUsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        AdditionalPagesAppBar(title: 'Contact Us'),
-        SizedBox(height: 30),
+        const AdditionalPagesAppBar(title: 'Contact Us'),
+        const SizedBox(height: 30),
         Text(
           "We'd love to hear from you",
           style: Styles.textStyle18.copyWith(fontWeight: FontWeight.w600),
         ),
-        SizedBox(height: 20),
-        CustomContainerSection(
+        const SizedBox(height: 30),
+        const CustomContainerSection(
           children: [
             CustomListTile(
               icon: FaIcon(
@@ -31,7 +31,7 @@ class ContactUsViewBody extends StatelessWidget {
               title: 'Email',
               subtitle: 'support@aiconnect.com',
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
             CustomListTile(
               icon: FaIcon(
                 FontAwesomeIcons.phone,
@@ -41,7 +41,7 @@ class ContactUsViewBody extends StatelessWidget {
               title: 'Phone',
               subtitle: '+20 101111002',
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
             CustomListTile(
               icon: FaIcon(
                 FontAwesomeIcons.locationDot,
@@ -51,7 +51,7 @@ class ContactUsViewBody extends StatelessWidget {
               title: 'Address',
               subtitle: '123 Smart City, Cairo,Egypt',
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
             CustomListTile(
               icon: FaIcon(
                 FontAwesomeIcons.clock,
@@ -63,6 +63,8 @@ class ContactUsViewBody extends StatelessWidget {
             ),
           ],
         ),
+        const SizedBox(height: 40),
+        Placeholder(fallbackHeight: 210),
       ],
     );
   }

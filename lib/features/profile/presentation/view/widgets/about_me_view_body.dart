@@ -1,3 +1,5 @@
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_about_me_header.dart';
 import 'package:flutter/material.dart';
 
 class AboutMeViewBody extends StatelessWidget {
@@ -5,6 +7,12 @@ class AboutMeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        const AdditionalPagesAppBar(title: 'About Me'),
+        const SizedBox(height: 40),
+        CustomAboutMeHeader(),
+      ],
+    );
   }
 }

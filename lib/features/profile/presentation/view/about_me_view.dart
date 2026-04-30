@@ -6,6 +6,9 @@ class AboutMeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.white, body: AboutMeViewBody());
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(child: AboutMeViewBody()),
+    );
   }
 }

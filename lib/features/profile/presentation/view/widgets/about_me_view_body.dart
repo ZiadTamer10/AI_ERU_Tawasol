@@ -1,4 +1,5 @@
 import 'package:ai_eru_tawasol/constants.dart';
+import 'package:ai_eru_tawasol/core/utils/app_router.dart';
 import 'package:ai_eru_tawasol/core/utils/assets.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
@@ -7,6 +8,7 @@ import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class AboutMeViewBody extends StatelessWidget {
   const AboutMeViewBody({super.key});
@@ -32,7 +34,9 @@ class AboutMeViewBody extends StatelessWidget {
                 Icons.arrow_forward_ios_rounded,
                 color: Color(0xff9E9D97),
               ),
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).push(AppRouter.kOurMissionView);
+              },
             ),
             Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
             CustomListTile(

@@ -11,6 +11,7 @@ import 'package:ai_eru_tawasol/features/onboarding/presentation/view/on_boarding
 import 'package:ai_eru_tawasol/features/profile/presentation/view/about_me_view.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/change_password_view.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/language_view.dart';
+import 'package:ai_eru_tawasol/features/profile/presentation/view/our_mission_view.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/profile_view.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/theme_mode_view.dart';
 import 'package:ai_eru_tawasol/features/splash/presentation/view/splash_view.dart';
@@ -29,6 +30,7 @@ class AppRouter {
   static const kThemeModeView = '/themeModeView';
   static const kLanguageView = '/languageView';
   static const kAboutMeView = '/aboutMeView';
+  static const kOurMissionView = '/ourMissionView';
 
   static final GoRouter router = GoRouter(
     routes: [
@@ -71,6 +73,10 @@ class AppRouter {
       ),
       GoRoute(path: kLanguageView, builder: (context, state) => LanguageView()),
       GoRoute(path: kAboutMeView, builder: (context, state) => AboutMeView()),
+      GoRoute(
+        path: kOurMissionView,
+        builder: (context, state) => OurMissionView(),
+      ),
     ],
   );
 }

@@ -13,7 +13,7 @@ class AccountSection extends StatelessWidget {
       children: [
         CustomListTile(
           onTap: () {},
-          icon: Icons.person_outline_rounded,
+          icon: Icon(Icons.person_outline_rounded, size: 36),
           title: 'User Name',
           subtitle: 'Ziad Tamer',
           trailing: Icon(
@@ -23,7 +23,7 @@ class AccountSection extends StatelessWidget {
         ),
         Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
         CustomListTile(
-          icon: Icons.lock_outline_rounded,
+          icon: Icon(Icons.lock_outline_rounded, size: 36),
           title: 'Password',
           subtitle: '********',
           trailing: IconButton(
@@ -36,7 +36,7 @@ class AccountSection extends StatelessWidget {
           onTap: () {
             GoRouter.of(context).push(AppRouter.kChangePasswordView);
           },
-          icon: Icons.password_rounded,
+          icon: Icon(Icons.password_rounded, size: 36),
           title: 'Change Password',
           trailing: Icon(
             Icons.arrow_forward_ios_rounded,

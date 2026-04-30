@@ -10,14 +10,14 @@ class CustomAboutMeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset(AssetsData.logo),
+        Image.asset(AssetsData.logo, height: 130),
         const SizedBox(height: 10),
         Text('AI Connect', style: Styles.textStyle24.copyWith(fontSize: 30)),
         Text(
           'Version  1.0.0+1',
           style: Styles.textStyle18.copyWith(color: kSecondaryColor),
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 10),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(

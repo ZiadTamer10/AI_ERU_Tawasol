@@ -25,7 +25,7 @@ class _PreferencesSectionState extends State<PreferencesSection> {
           onTap: () {
             GoRouter.of(context).push(AppRouter.kThemeModeView);
           },
-          icon: Icons.brightness_5_outlined,
+          icon: Icon(Icons.brightness_5_outlined, size: 36),
           title: 'Theme Mode',
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
@@ -55,7 +55,7 @@ class _PreferencesSectionState extends State<PreferencesSection> {
           onTap: () {
             GoRouter.of(context).push(AppRouter.kLanguageView);
           },
-          icon: Icons.language_rounded,
+          icon: Icon(Icons.language_rounded, size: 36),
           title: 'Language',
           trailing: Row(
             mainAxisSize: MainAxisSize.min,

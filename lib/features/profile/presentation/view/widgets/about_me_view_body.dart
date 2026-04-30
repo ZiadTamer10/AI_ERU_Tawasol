@@ -1,5 +1,9 @@
+import 'package:ai_eru_tawasol/constants.dart';
+import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_about_me_header.dart';
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_container_section.dart';
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_list_tile.dart';
 import 'package:flutter/material.dart';
 
 class AboutMeViewBody extends StatelessWidget {
@@ -10,8 +14,64 @@ class AboutMeViewBody extends StatelessWidget {
     return Column(
       children: [
         const AdditionalPagesAppBar(title: 'About Me'),
-        const SizedBox(height: 40),
+        const SizedBox(height: 30),
         CustomAboutMeHeader(),
+        const SizedBox(height: 30),
+        CustomContainerSection(
+          children: [
+            CustomListTile(
+              icon: Icon(
+                Icons.safety_check_outlined,
+                size: 36,
+                color: kPrimaryColor,
+              ),
+              title: 'Our Mission',
+              trailing: Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: Color(0xff9E9D97),
+              ),
+              onTap: () {},
+            ),
+            Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
+            CustomListTile(
+              icon: Icon(
+                Icons.contact_support_sharp,
+                size: 36,
+                color: kPrimaryColor,
+              ),
+              title: 'Contact Us',
+              trailing: Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: Color(0xff9E9D97),
+              ),
+              onTap: () {},
+            ),
+            Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
+            CustomListTile(
+              icon: Icon(
+                Icons.approval_outlined,
+                size: 36,
+                color: kPrimaryColor,
+              ),
+              title: 'App Version',
+              trailing: Text(
+                '1.0.0+1',
+                style: Styles.textStyle16.copyWith(color: Color(0xff9E9D97)),
+              ),
+              onTap: () {},
+            ),
+            Divider(endIndent: 43, indent: 68.5, thickness: 0.5),
+            CustomListTile(
+              icon: Icon(
+                Icons.reply_all_outlined,
+                size: 36,
+                color: kPrimaryColor,
+              ),
+              title: 'Follow Us',
+              onTap: () {},
+            ),
+          ],
+        ),
       ],
     );
   }

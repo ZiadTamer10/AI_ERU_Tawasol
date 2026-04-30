@@ -11,7 +11,7 @@ class CustomListTile extends StatelessWidget {
     this.onTap,
   });
 
-  final IconData icon;
+  final Widget? icon;
   final String title;
   final String? subtitle;
   final Widget? trailing;
@@ -21,7 +21,7 @@ class CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      leading: Icon(icon, size: 36),
+      leading: icon,
       title: Text(title, style: Styles.textStyle20),
       subtitle: subtitle != null
           ? Text(

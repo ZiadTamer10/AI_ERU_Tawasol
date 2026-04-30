@@ -13,7 +13,7 @@ class SupportSection extends StatelessWidget {
       children: [
         CustomListTile(
           onTap: () {},
-          icon: Icons.headset_mic_outlined,
+          icon: Icon(Icons.headset_mic_outlined, size: 36),
           title: 'Help&Support',
           trailing: Icon(
             Icons.arrow_forward_ios_rounded,
@@ -25,7 +25,7 @@ class SupportSection extends StatelessWidget {
           onTap: () {
             GoRouter.of(context).push(AppRouter.kAboutMeView);
           },
-          icon: Icons.info_outline_rounded,
+          icon: Icon(Icons.info_outline_rounded, size: 36),
           title: 'About Me',
           trailing: Icon(
             Icons.arrow_forward_ios_rounded,

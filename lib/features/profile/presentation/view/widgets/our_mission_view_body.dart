@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class OurMissionViewBody extends StatelessWidget {
@@ -5,6 +6,6 @@ class OurMissionViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(children: [AdditionalPagesAppBar(title: 'Our Mission')]);
   }
 }

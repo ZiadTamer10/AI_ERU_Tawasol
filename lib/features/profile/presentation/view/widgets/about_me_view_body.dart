@@ -19,7 +19,12 @@ class AboutMeViewBody extends StatelessWidget {
       children: [
         const AdditionalPagesAppBar(title: 'About Me'),
         const SizedBox(height: 30),
-        CustomAboutMeHeader(),
+        CustomAboutMeHeader(
+          image: Image.asset(AssetsData.logo, height: 130),
+          title: 'About Me',
+          paragraph:
+              'We aim to provide the best experience and intelligent solutions that make your life easire.',
+        ),
         const SizedBox(height: 30),
         CustomContainerSection(
           children: [

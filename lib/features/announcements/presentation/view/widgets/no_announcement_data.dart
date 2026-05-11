@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/core/utils/assets.dart';
 import 'package:ai_eru_tawasol/core/utils/styles.dart';
 import 'package:ai_eru_tawasol/features/home/presentation/view/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class NoAnnouncementData extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text('Timeline', style: Styles.textStyle24),
         ),
-        Center(child: Image.asset('assets/images/no_announcement.png')),
+        Center(child: Image.asset(AssetsData.noAnnouncement)),
         Center(
           child: Text(
             'No events scheduled for Today.\n$secondLine',

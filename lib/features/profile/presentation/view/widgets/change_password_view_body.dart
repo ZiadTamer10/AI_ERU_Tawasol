@@ -71,7 +71,10 @@ class _ChangePasswordViewBodyState extends State<ChangePasswordViewBody> {
             hasUpperCase: hasUpperCase,
           ),
           SizedBox(height: 60),
-          CustomButton(text: 'Update Password', onPressed: () {}),
+          SizedBox(
+            width: double.infinity,
+            child: CustomButton(text: 'Update Password', onPressed: () {}),
+          ),
         ],
       ),
     );

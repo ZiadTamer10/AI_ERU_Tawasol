@@ -9,12 +9,7 @@ class AnnouncementFormTitle extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(
-            right: 16,
-            left: 16,
-            top: 25,
-            bottom: 25,
-          ),
+          padding: const EdgeInsets.only(right: 16, left: 16, bottom: 10),
           child: Row(
             children: [
               const Text('New Announcement', style: Styles.textStyle22),
@@ -31,8 +26,8 @@ class AnnouncementFormTitle extends StatelessWidget {
             ],
           ),
         ),
-        const Divider(height: 1, color: Color(0xFFF1F5F9)),
-        SizedBox(height: 20),
+        const Divider(thickness: 2, color: Color(0xFFF1F5F9)),
+        SizedBox(height: 15),
       ],
     );
   }

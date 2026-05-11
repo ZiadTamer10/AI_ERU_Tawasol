@@ -1,5 +1,7 @@
+import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/announcement_action_button.dart';
 import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/announcement_form_title.dart';
 import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/custom_announcement_text_field.dart';
+import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/target_audience_section.dart';
 import 'package:flutter/material.dart';
 
 class AddAnnouncementForm extends StatelessWidget {
@@ -7,21 +9,26 @@ class AddAnnouncementForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
+    return SingleChildScrollView(
+      padding: const EdgeInsets.only(bottom: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AnnouncementFormTitle(),
-          CustomAnnouncementTextField(
+          const AnnouncementFormTitle(),
+          const CustomAnnouncementTextField(
             label: 'Title',
             hint: 'Enter announcement title',
           ),
-          SizedBox(height: 20),
-          CustomAnnouncementTextField(
+          const SizedBox(height: 16),
+          const CustomAnnouncementTextField(
             label: 'Details',
             hint: 'Write announcement details here...',
             maxLines: 5,
           ),
+          const SizedBox(height: 24),
+          TargetAudienceSection(),
+          SizedBox(height: 40),
+          AnnouncementActionButtons(onDiscard: () {}, onPost: () {}),
         ],
       ),
     );

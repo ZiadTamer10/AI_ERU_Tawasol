@@ -35,4 +35,4 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 }
 
 // TODO: Replace with real user role from backend / state management
-final bool isDoctor = true;
+final bool isDoctor = false;

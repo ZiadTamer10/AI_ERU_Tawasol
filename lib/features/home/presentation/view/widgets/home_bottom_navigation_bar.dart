@@ -1,5 +1,6 @@
 import 'package:ai_eru_tawasol/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeBottomNavigationBar extends StatelessWidget {
   const HomeBottomNavigationBar({
@@ -33,8 +34,8 @@ class HomeBottomNavigationBar extends StatelessWidget {
           backgroundColor: Colors.white,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.calendar_month),
-          label: "Calendar",
+          icon: FaIcon(FontAwesomeIcons.solidComments, size: 28),
+          label: "Chat",
           backgroundColor: Colors.white,
         ),
         BottomNavigationBarItem(

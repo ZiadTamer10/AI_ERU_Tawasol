@@ -32,6 +32,7 @@ class AnnouncementFormTitle extends StatelessWidget {
           ),
         ),
         const Divider(height: 1, color: Color(0xFFF1F5F9)),
+        SizedBox(height: 20),
       ],
     );
   }

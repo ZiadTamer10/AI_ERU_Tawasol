@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/add_announcement_form.dart';
 import 'package:flutter/material.dart';
 
 class AddAnnouncementButtomSheet extends StatelessWidget {
@@ -5,6 +6,6 @@ class AddAnnouncementButtomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return AddAnnouncementForm();
   }
 }

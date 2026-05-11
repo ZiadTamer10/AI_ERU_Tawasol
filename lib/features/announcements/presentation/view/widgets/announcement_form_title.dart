@@ -12,8 +12,8 @@ class AnnouncementFormTitle extends StatelessWidget {
           padding: const EdgeInsets.only(
             right: 16,
             left: 16,
-            top: 20,
-            bottom: 10,
+            top: 25,
+            bottom: 25,
           ),
           child: Row(
             children: [

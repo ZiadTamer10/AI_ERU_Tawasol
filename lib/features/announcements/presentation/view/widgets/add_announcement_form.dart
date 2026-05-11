@@ -28,7 +28,12 @@ class AddAnnouncementForm extends StatelessWidget {
           const SizedBox(height: 24),
           TargetAudienceSection(),
           SizedBox(height: 40),
-          AnnouncementActionButtons(onDiscard: () {}, onPost: () {}),
+          AnnouncementActionButtons(
+            onDiscard: () {
+              Navigator.pop(context);
+            },
+            onPost: () {},
+          ),
         ],
       ),
     );

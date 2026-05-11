@@ -6,23 +6,33 @@ class AnnouncementFormTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-      child: Row(
-        children: [
-          const Text('New Announcement', style: Styles.textStyle22),
-          Spacer(),
-          IconButton(
-            onPressed: () => Navigator.pop(context),
-            icon: const Icon(Icons.close_rounded, color: Color(0xFF64748B)),
-            style: IconButton.styleFrom(
-              iconSize: 32,
-              shape: const CircleBorder(),
-              backgroundColor: Color(0xFFF1F5F9),
-            ),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(
+            right: 16,
+            left: 16,
+            top: 20,
+            bottom: 10,
           ),
-        ],
-      ),
+          child: Row(
+            children: [
+              const Text('New Announcement', style: Styles.textStyle22),
+              Spacer(),
+              IconButton(
+                onPressed: () => Navigator.pop(context),
+                icon: const Icon(Icons.close_rounded, color: Color(0xFF64748B)),
+                style: IconButton.styleFrom(
+                  iconSize: 32,
+                  shape: const CircleBorder(),
+                  backgroundColor: Color(0xFFF1F5F9),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const Divider(height: 1, color: Color(0xFFF1F5F9)),
+      ],
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:ai_eru_tawasol/features/announcements/presentation/view/widgets/announcement_form_title.dart';
 import 'package:flutter/material.dart';
 
 class AddAnnouncementForm extends StatelessWidget {
@@ -5,6 +6,9 @@ class AddAnnouncementForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(children: [AnnouncementFormTitle()]),
+    );
   }
 }

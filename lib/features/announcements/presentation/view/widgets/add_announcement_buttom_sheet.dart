@@ -6,6 +6,6 @@ class AddAnnouncementButtomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AddAnnouncementForm();
+    return SizedBox(height: 600, child: AddAnnouncementForm());
   }
 }

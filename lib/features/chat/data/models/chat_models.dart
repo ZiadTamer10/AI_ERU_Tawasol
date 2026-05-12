@@ -154,6 +154,39 @@ class ChatConversation {
   });
 }
 
+enum ChatOption { search, mute, block, clearChat }
+
+extension ChatOptionExt on ChatOption {
+  String get label {
+    switch (this) {
+      case ChatOption.search:
+        return 'Search in Conversation';
+      case ChatOption.mute:
+        return 'Mute Notifications';
+      case ChatOption.block:
+        return 'Block User';
+      case ChatOption.clearChat:
+        return 'Clear Chat';
+    }
+  }
+
+  IconData get icon {
+    switch (this) {
+      case ChatOption.search:
+        return Icons.search_rounded;
+      case ChatOption.mute:
+        return Icons.notifications_off_rounded;
+      case ChatOption.block:
+        return Icons.block_rounded;
+      case ChatOption.clearChat:
+        return Icons.delete_outline_rounded;
+    }
+  }
+
+  bool get isDestructive =>
+      this == ChatOption.block || this == ChatOption.clearChat;
+}
+
 enum AttachmentOption { camera, gallery, document, audio, link }
 
 extension AttachmentOptionExt on AttachmentOption {

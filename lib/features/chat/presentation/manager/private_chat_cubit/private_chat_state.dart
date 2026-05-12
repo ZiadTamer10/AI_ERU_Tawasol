@@ -14,22 +14,38 @@ final class PrivateChatLoading extends PrivateChatState {}
 final class PrivateChatLoaded extends PrivateChatState {
   final List<ChatMessage> messages;
   final bool isOtherTyping;
+  final bool isSearching;
+  final String searchQuery;
+  final List<ChatMessage> filteredMessages;
 
   const PrivateChatLoaded({
     required this.messages,
+    required this.filteredMessages,
     this.isOtherTyping = false,
+    this.isSearching = false,
+    this.searchQuery = '',
   });
 
+  List<ChatMessage> get displayMessages =>
+      isSearching ? filteredMessages : messages;
+
   @override
-  List<Object?> get props => [messages, isOtherTyping];
+  List<Object?> get props =>
+      [messages, isOtherTyping, isSearching, searchQuery, filteredMessages];
 
   PrivateChatLoaded copyWith({
     List<ChatMessage>? messages,
     bool? isOtherTyping,
+    bool? isSearching,
+    String? searchQuery,
+    List<ChatMessage>? filteredMessages,
   }) {
     return PrivateChatLoaded(
       messages: messages ?? this.messages,
       isOtherTyping: isOtherTyping ?? this.isOtherTyping,
+      isSearching: isSearching ?? this.isSearching,
+      searchQuery: searchQuery ?? this.searchQuery,
+      filteredMessages: filteredMessages ?? this.filteredMessages,
     );
   }
 }

@@ -1,30 +1,35 @@
-import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/shared/sheet_handle.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:ai_eru_tawasol/features/chat/data/models/chat_models.dart';
+import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/private_chat/sheets/chat_option_tile.dart';
+import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/shared/sheet_handle.dart';
 
 class ChatOptionsSheet extends StatelessWidget {
   final ChatUser user;
+  final void Function(ChatOption) onOptionSelected;
 
-  const ChatOptionsSheet({super.key, required this.user});
+  const ChatOptionsSheet({
+    super.key,
+    required this.user,
+    required this.onOptionSelected,
+  });
 
-  static Future<void> show(BuildContext context, {required ChatUser user}) {
+  static Future<void> show(
+    BuildContext context, {
+    required ChatUser user,
+    required void Function(ChatOption) onOptionSelected,
+  }) {
     return showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
-      builder: (_) => ChatOptionsSheet(user: user),
+      builder: (_) => ChatOptionsSheet(
+        user: user,
+        onOptionSelected: onOptionSelected,
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final items = [
-      (Icons.search_rounded, 'Search in Conversation'),
-      (Icons.notifications_off_rounded, 'Mute Notifications'),
-      (Icons.block_rounded, 'Block User'),
-      (Icons.delete_outline_rounded, 'Clear Chat'),
-    ];
-
     return Container(
       decoration: const BoxDecoration(
         color: Colors.white,
@@ -36,21 +41,13 @@ class ChatOptionsSheet extends StatelessWidget {
         children: [
           const SheetHandle(),
           const SizedBox(height: 20),
-          ...items.map(
-            (item) => ListTile(
-              leading: Icon(item.$1, color: ChatColors.textSecondary),
-              title: Text(
-                item.$2,
-                style: GoogleFonts.plusJakartaSans(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: ChatColors.textPrimary,
-                ),
-              ),
-              onTap: () => Navigator.pop(context),
-              contentPadding: EdgeInsets.zero,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
+          ...ChatOption.values.map(
+            (option) => ChatOptionTile(
+              option: option,
+              onTap: () {
+                Navigator.pop(context);
+                onOptionSelected(option);
+              },
             ),
           ),
         ],

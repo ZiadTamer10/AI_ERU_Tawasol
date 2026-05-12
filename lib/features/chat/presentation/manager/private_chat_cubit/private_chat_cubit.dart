@@ -14,7 +14,7 @@ class PrivateChatCubit extends Cubit<PrivateChatState> {
     emit(PrivateChatLoading());
     try {
       final messages = await _repo.getMessages(userId);
-      emit(PrivateChatLoaded(messages: messages));
+      emit(PrivateChatLoaded(messages: messages, filteredMessages: messages));
       _simulateTyping();
     } catch (e) {
       emit(PrivateChatError(e.toString()));
@@ -41,7 +41,7 @@ class PrivateChatCubit extends Cubit<PrivateChatState> {
       isFromMe: true,
     );
     final updated = List<ChatMessage>.from(current.messages)..add(msg);
-    emit(current.copyWith(messages: updated, isOtherTyping: false));
+    emit(current.copyWith(messages: updated, filteredMessages: updated, isOtherTyping: false));
     await _repo.sendMessage(msg);
   }
 
@@ -58,7 +58,32 @@ class PrivateChatCubit extends Cubit<PrivateChatState> {
       isFromMe: true,
     );
     final updated = List<ChatMessage>.from(current.messages)..add(msg);
-    emit(current.copyWith(messages: updated));
+    emit(current.copyWith(messages: updated, filteredMessages: updated));
     await _repo.sendMessage(msg);
+  }
+
+  void toggleSearch() {
+    final current = state;
+    if (current is! PrivateChatLoaded) return;
+    emit(current.copyWith(
+      isSearching: !current.isSearching,
+      searchQuery: '',
+      filteredMessages: current.messages,
+    ));
+  }
+
+  void searchMessages(String query) {
+    final current = state;
+    if (current is! PrivateChatLoaded) return;
+    final filtered = query.isEmpty
+        ? current.messages
+        : current.messages
+            .where((m) =>
+                m.text?.toLowerCase().contains(query.toLowerCase()) ?? false)
+            .toList();
+    emit(current.copyWith(
+      searchQuery: query,
+      filteredMessages: filtered,
+    ));
   }
 }

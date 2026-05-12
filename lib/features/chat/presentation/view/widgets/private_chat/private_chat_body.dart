@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ai_eru_tawasol/features/chat/data/models/chat_models.dart';
 import 'package:ai_eru_tawasol/features/chat/presentation/manager/private_chat_cubit/private_chat_cubit.dart';
+import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/private_chat/chat_search_bar.dart';
 import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/private_chat/input/chat_input_bar.dart';
 import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/private_chat/messages/date_separator.dart';
 import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/private_chat/messages/message_bubble.dart';
@@ -61,7 +62,9 @@ class _PrivateChatBodyState extends State<PrivateChatBody> {
   Widget build(BuildContext context) {
     return BlocConsumer<PrivateChatCubit, PrivateChatState>(
       listener: (context, state) {
-        if (state is PrivateChatLoaded) _scrollToBottom();
+        if (state is PrivateChatLoaded && !state.isSearching) {
+          _scrollToBottom();
+        }
       },
       builder: (context, state) {
         if (state is PrivateChatInitial || state is PrivateChatLoading) {
@@ -73,48 +76,82 @@ class _PrivateChatBodyState extends State<PrivateChatBody> {
         }
 
         final loaded = state as PrivateChatLoaded;
+        final messages = loaded.displayMessages;
 
         return Column(
           children: [
+            if (loaded.isSearching)
+              ChatSearchBar(
+                onChanged: (q) =>
+                    context.read<PrivateChatCubit>().searchMessages(q),
+                onClose: () =>
+                    context.read<PrivateChatCubit>().toggleSearch(),
+              ),
             Expanded(
               child: Container(
                 color: ChatColors.background,
-                child: ListView.builder(
-                  controller: _scrollController,
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  itemCount:
-                      loaded.messages.length + (loaded.isOtherTyping ? 1 : 0),
-                  itemBuilder: (context, index) {
-                    if (loaded.isOtherTyping &&
-                        index == loaded.messages.length) {
-                      return TypingIndicator(
-                          user: widget.conversation.otherUser);
-                    }
-                    final message = loaded.messages[index];
-                    return Column(
-                      children: [
-                        if (_showDateSeparator(loaded.messages, index))
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: DateSeparator(date: message.timestamp),
-                          ),
-                        MessageBubble(message: message),
-                      ],
-                    );
-                  },
-                ),
+                child: messages.isEmpty && loaded.isSearching
+                    ? _buildNoResults(loaded.searchQuery)
+                    : ListView.builder(
+                        controller: _scrollController,
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        itemCount: messages.length +
+                            (!loaded.isSearching && loaded.isOtherTyping
+                                ? 1
+                                : 0),
+                        itemBuilder: (context, index) {
+                          if (!loaded.isSearching &&
+                              loaded.isOtherTyping &&
+                              index == messages.length) {
+                            return TypingIndicator(
+                                user: widget.conversation.otherUser);
+                          }
+                          final message = messages[index];
+                          return Column(
+                            children: [
+                              if (_showDateSeparator(messages, index))
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16),
+                                  child:
+                                      DateSeparator(date: message.timestamp),
+                                ),
+                              MessageBubble(message: message),
+                            ],
+                          );
+                        },
+                      ),
               ),
             ),
-            ChatInputBar(
-              onSendText: (text) =>
-                  context.read<PrivateChatCubit>().sendTextMessage(text),
-              onSendVoice: () =>
-                  context.read<PrivateChatCubit>().sendVoiceMessage(),
-              onAttachment: _onAttachment,
-            ),
+            if (!loaded.isSearching)
+              ChatInputBar(
+                onSendText: (text) =>
+                    context.read<PrivateChatCubit>().sendTextMessage(text),
+                onSendVoice: () =>
+                    context.read<PrivateChatCubit>().sendVoiceMessage(),
+                onAttachment: _onAttachment,
+              ),
           ],
         );
       },
+    );
+  }
+
+  Widget _buildNoResults(String query) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Icon(Icons.search_off_rounded,
+              size: 48, color: Color(0xffA0AABB)),
+          const SizedBox(height: 12),
+          Text(
+            'No messages found for "$query"',
+            style: const TextStyle(color: Color(0xff64748B), fontSize: 14),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }

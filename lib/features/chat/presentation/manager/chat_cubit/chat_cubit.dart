@@ -14,8 +14,10 @@ class ChatCubit extends Cubit<ChatState> {
     emit(ChatLoading());
     try {
       final conversations = await _repo.getConversations();
+      if (isClosed) return;
       emit(ChatLoaded(conversations: conversations, filtered: conversations));
     } catch (e) {
+      if (isClosed) return;
       emit(ChatError(e.toString()));
     }
   }
@@ -52,6 +54,7 @@ class ChatCubit extends Cubit<ChatState> {
     final current = state;
     if (current is! ChatLoaded) return;
     final conversations = await _repo.getConversations();
+    if (isClosed) return;
     emit(current.copyWith(
       conversations: conversations,
       filtered: conversations,

@@ -1,11 +1,12 @@
-import 'package:ai_eru_tawasol/core/services/service_locator.dart';
-import 'package:ai_eru_tawasol/features/announcements/presentation/view/announcement_details_view.dart';
+﻿import 'package:ai_eru_tawasol/core/services/service_locator.dart';
+import 'package:ai_eru_tawasol/features/announcement/data/models/announ_models.dart';
+import 'package:ai_eru_tawasol/features/announcement/presentation/view/add_announ_view.dart';
+import 'package:ai_eru_tawasol/features/announcement/presentation/view/announ_details_view.dart';
 import 'package:ai_eru_tawasol/features/authentication/data/repos/auth_repo_impl.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/manager/forget_password_cubit/forget_password_cubit.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/forget_password_view.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/login_view.dart';
-import 'package:ai_eru_tawasol/features/cousres/presentation/view/course_details_view.dart';
 import 'package:ai_eru_tawasol/features/home/presentation/view/home_view.dart';
 import 'package:ai_eru_tawasol/features/onboarding/presentation/view/on_boarding_view.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/about_me_view.dart';
@@ -35,6 +36,7 @@ class AppRouter {
   static const kOurMissionView = '/ourMissionView';
   static const kContactUsView = '/contactUsView';
   static const kAppVersionView = '/appVersionView';
+  static const kAddAnnouncementView = '/addAnnouncementView';
 
   static final GoRouter router = GoRouter(
     routes: [
@@ -60,12 +62,14 @@ class AppRouter {
       GoRoute(path: kHomeView, builder: (context, state) => HomeView()),
       GoRoute(
         path: kAnnouncementDetailsView,
-        builder: (context, state) => AnnouncementDetailsView(),
+        builder: (context, state) => AnnounDetailsView(
+          announcement: state.extra as Announcement,
+        ),
       ),
-      GoRoute(
-        path: kCourseDetailsView,
-        builder: (context, state) => CourseDetailsView(),
-      ),
+      // GoRoute(
+      //   path: kCourseDetailsView,
+      //   builder: (context, state) => CourseDetailsView(),
+      // ),
       GoRoute(path: kProfileView, builder: (context, state) => ProfileView()),
       GoRoute(
         path: kChangePasswordView,
@@ -88,6 +92,11 @@ class AppRouter {
       GoRoute(
         path: kAppVersionView,
         builder: (context, state) => AppVersionView(),
+      ),
+      GoRoute(
+        path: kAddAnnouncementView,
+        builder: (context, state) =>
+            AddAnnounView(role: state.extra as AnnounRole),
       ),
     ],
   );

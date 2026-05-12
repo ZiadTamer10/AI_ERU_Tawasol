@@ -1,0 +1,101 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ai_eru_tawasol/features/announcement/data/models/announ_models.dart';
+import 'package:ai_eru_tawasol/features/announcement/presentation/manager/add_announ_cubit/add_announ_cubit.dart';
+import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/actions/add_announ_action_buttons.dart';
+import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/add_announ_text_field.dart';
+import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/attachments/add_announ_attachment_section.dart';
+import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/audience/add_announ_audience_selector.dart';
+import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/post_type/add_announ_post_type_selector.dart';
+
+class AddAnnounBody extends StatefulWidget {
+  final AnnounRole role;
+
+  const AddAnnounBody({super.key, required this.role});
+
+  @override
+  State<AddAnnounBody> createState() => _AddAnnounBodyState();
+}
+
+class _AddAnnounBodyState extends State<AddAnnounBody> {
+  final _titleController = TextEditingController();
+  final _detailsController = TextEditingController();
+
+  @override
+  void dispose() {
+    _titleController.dispose();
+    _detailsController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<AddAnnounCubit, AddAnnounState>(
+      builder: (context, state) {
+        final cubit = context.read<AddAnnounCubit>();
+        return Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.fromLTRB(20, 24, 20, 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (widget.role == AnnounRole.doctor) ...[
+                      AddAnnounPostTypeSelector(
+                        selected: state.postType,
+                        onSelected: cubit.selectPostType,
+                      ),
+                      const SizedBox(height: 24),
+                    ],
+                    AddAnnounTextField(
+                      label: 'Title',
+                      hint: 'Enter announcement title...',
+                      controller: _titleController,
+                      onChanged: cubit.setTitle,
+                    ),
+                    const SizedBox(height: 16),
+                    AddAnnounTextField(
+                      label: 'Details',
+                      hint: 'Write your announcement content here...',
+                      controller: _detailsController,
+                      maxLines: 6,
+                      onChanged: cubit.setDetails,
+                    ),
+                    const SizedBox(height: 24),
+                    AddAnnounAttachmentSection(
+                      visible: state.supportsAttachments,
+                      attachments: state.attachments,
+                      onAdd: cubit.addAttachment,
+                      onRemove: cubit.removeAttachment,
+                    ),
+                    AnimatedSize(
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeInOutCubic,
+                      child: state.supportsAttachments
+                          ? const SizedBox(height: 24)
+                          : const SizedBox.shrink(),
+                    ),
+                    AddAnnounAudienceSelector(
+                      state: state,
+                      onTypeSelected: cubit.selectAudienceType,
+                      onOptionToggled: cubit.toggleOption,
+                      availableOptions: cubit.audienceOptions,
+                    ),
+                    const SizedBox(height: 16),
+                  ],
+                ),
+              ),
+            ),
+            AddAnnounActionButtons(
+              canPost: state.canPost,
+              isPosting: state.isPosting,
+              onDiscard: () => Navigator.pop(context),
+              onPost: cubit.post,
+            ),
+          ],
+        );
+      },
+    );
+  }
+}

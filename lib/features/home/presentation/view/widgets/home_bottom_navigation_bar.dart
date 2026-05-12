@@ -35,7 +35,7 @@ class HomeBottomNavigationBar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: FaIcon(FontAwesomeIcons.solidComments, size: 28),
-          label: "Chat",
+          label: "Messages",
           backgroundColor: Colors.white,
         ),
         BottomNavigationBarItem(

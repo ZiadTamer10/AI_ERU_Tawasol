@@ -1,11 +1,17 @@
-import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/chat_view_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ai_eru_tawasol/features/chat/data/repos/chat_repo_impl.dart';
+import 'package:ai_eru_tawasol/features/chat/presentation/manager/chat_cubit/chat_cubit.dart';
+import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/chat_list/chat_view_body.dart';
 
 class ChatView extends StatelessWidget {
   const ChatView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const ChatViewBody();
+    return BlocProvider(
+      create: (_) => ChatCubit(ChatRepoImpl())..loadConversations(),
+      child: const ChatViewBody(),
+    );
   }
 }

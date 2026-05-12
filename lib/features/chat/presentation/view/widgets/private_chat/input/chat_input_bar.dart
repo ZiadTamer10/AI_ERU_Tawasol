@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ai_eru_tawasol/features/chat/data/models/chat_models.dart';
+import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/private_chat/input/chat_emoji_picker.dart';
 import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/private_chat/input/chat_input_text_field.dart';
 import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/private_chat/input/chat_mic_button.dart';
 import 'package:ai_eru_tawasol/features/chat/presentation/view/widgets/private_chat/input/chat_send_button.dart';
@@ -28,14 +29,32 @@ class _ChatInputBarState extends State<ChatInputBar> {
   final _focusNode = FocusNode();
   bool _hasText = false;
   bool _isRecording = false;
+  bool _showEmojiPicker = false;
 
   @override
   void initState() {
     super.initState();
-    _controller.addListener(() {
-      final hasText = _controller.text.trim().isNotEmpty;
-      if (hasText != _hasText) setState(() => _hasText = hasText);
-    });
+    _controller.addListener(_handleTextChange);
+    _focusNode.addListener(_handleFocusChange);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  void _handleTextChange() {
+    final hasText = _controller.text.trim().isNotEmpty;
+    if (hasText != _hasText) setState(() => _hasText = hasText);
+  }
+
+  void _handleFocusChange() {
+    // Close emoji picker when the user taps directly into the text field
+    if (_focusNode.hasFocus && _showEmojiPicker) {
+      setState(() => _showEmojiPicker = false);
+    }
   }
 
   void _send() {
@@ -45,7 +64,11 @@ class _ChatInputBarState extends State<ChatInputBar> {
     _controller.clear();
   }
 
-  void _startRecording() => setState(() => _isRecording = true);
+  void _startRecording() => setState(() {
+        _isRecording = true;
+        _showEmojiPicker = false;
+      });
+
   void _cancelRecording() => setState(() => _isRecording = false);
 
   void _sendVoice() {
@@ -53,11 +76,14 @@ class _ChatInputBarState extends State<ChatInputBar> {
     widget.onSendVoice?.call();
   }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    _focusNode.dispose();
-    super.dispose();
+  void _toggleEmojiPicker() {
+    if (_showEmojiPicker) {
+      setState(() => _showEmojiPicker = false);
+      _focusNode.requestFocus();
+    } else {
+      FocusScope.of(context).unfocus();
+      setState(() => _showEmojiPicker = true);
+    }
   }
 
   @override
@@ -69,6 +95,16 @@ class _ChatInputBarState extends State<ChatInputBar> {
       );
     }
 
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        _buildInputRow(),
+        if (_showEmojiPicker) ChatEmojiPicker(controller: _controller),
+      ],
+    );
+  }
+
+  Widget _buildInputRow() {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -100,6 +136,8 @@ class _ChatInputBarState extends State<ChatInputBar> {
                 controller: _controller,
                 focusNode: _focusNode,
                 onSubmit: _send,
+                onEmojiTap: _toggleEmojiPicker,
+                emojiActive: _showEmojiPicker,
               ),
             ),
             const SizedBox(width: 8),

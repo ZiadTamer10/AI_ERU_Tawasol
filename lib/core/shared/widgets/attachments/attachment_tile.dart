@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ai_eru_tawasol/core/shared/widgets/attachments/attachment_section_card.dart';
+import 'package:ai_eru_tawasol/core/shared/widgets/attachments/attachment_display_data.dart';
 
 class AttachmentTile extends StatelessWidget {
   final AttachmentDisplayData attachment;

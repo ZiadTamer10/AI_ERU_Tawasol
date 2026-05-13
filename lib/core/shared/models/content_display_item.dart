@@ -1,18 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ContentDisplayAttachment {
-  final String name;
-  final String sizeLabel;
-  final IconData icon;
-  final Color iconColor;
-
-  const ContentDisplayAttachment({
-    required this.name,
-    required this.sizeLabel,
-    required this.icon,
-    required this.iconColor,
-  });
-}
+import 'package:ai_eru_tawasol/core/shared/models/content_display_attachment.dart';
+export 'package:ai_eru_tawasol/core/shared/models/content_display_attachment.dart';
 
 class ContentDisplayItem {
   final String id;

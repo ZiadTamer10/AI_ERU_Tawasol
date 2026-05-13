@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ai_eru_tawasol/features/home/presentation/view/widgets/home_nav_item.dart';
 
 class HomeBottomNavigationBar extends StatelessWidget {
   const HomeBottomNavigationBar({
@@ -16,10 +17,10 @@ class HomeBottomNavigationBar extends StatelessWidget {
   static const _bgColor = Colors.white;
 
   static const _items = [
-    _NavItem(icon: Icons.campaign_rounded, label: 'Announcements'),
-    _NavItem(icon: Icons.chat_bubble_rounded, label: 'Chat'),
-    _NavItem(icon: Icons.menu_book_rounded, label: 'Courses'),
-    _NavItem(icon: Icons.person_rounded, label: 'Profile'),
+    HomeNavItem(icon: Icons.campaign_rounded, label: 'Announcements'),
+    HomeNavItem(icon: Icons.chat_bubble_rounded, label: 'Chat'),
+    HomeNavItem(icon: Icons.menu_book_rounded, label: 'Courses'),
+    HomeNavItem(icon: Icons.person_rounded, label: 'Profile'),
   ];
 
   @override
@@ -93,9 +94,3 @@ class HomeBottomNavigationBar extends StatelessWidget {
   }
 }
 
-class _NavItem {
-  final IconData icon;
-  final String label;
-
-  const _NavItem({required this.icon, required this.label});
-}

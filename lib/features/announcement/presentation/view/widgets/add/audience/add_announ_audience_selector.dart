@@ -1,9 +1,9 @@
 ﻿import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:ai_eru_tawasol/features/announcement/presentation/manager/add_announ_cubit/add_announ_cubit.dart';
 import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/audience/add_announ_audience_options_wrap.dart';
 import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/audience/add_announ_audience_type_card.dart';
 import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/audience/add_announ_everyone_info.dart';
+import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/audience/add_announ_required_badge.dart';
 import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/shared/section_header.dart';
 
 class AddAnnounAudienceSelector extends StatelessWidget {
@@ -29,7 +29,7 @@ class AddAnnounAudienceSelector extends StatelessWidget {
       children: [
         SectionHeader(
           title: 'Target Audience',
-          trailing: state.audienceType == null ? _RequiredBadge() : null,
+          trailing: state.audienceType == null ? const AddAnnounRequiredBadge() : null,
         ),
         const SizedBox(height: 14),
         Row(
@@ -82,25 +82,3 @@ class AddAnnounAudienceSelector extends StatelessWidget {
   }
 }
 
-class _RequiredBadge extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-      decoration: BoxDecoration(
-        color: const Color(0xffFEF3C7),
-        borderRadius: BorderRadius.circular(8),
-        border:
-            Border.all(color: const Color(0xffF59E0B).withValues(alpha: 0.4)),
-      ),
-      child: Text(
-        'Required',
-        style: GoogleFonts.plusJakartaSans(
-          fontSize: 10,
-          fontWeight: FontWeight.w700,
-          color: const Color(0xffD97706),
-        ),
-      ),
-    );
-  }
-}

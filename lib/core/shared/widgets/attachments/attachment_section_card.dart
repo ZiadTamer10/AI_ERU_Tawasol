@@ -1,20 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ai_eru_tawasol/core/shared/widgets/attachments/attachment_display_data.dart';
 import 'package:ai_eru_tawasol/core/shared/widgets/attachments/attachment_tile.dart';
 
-class AttachmentDisplayData {
-  final String name;
-  final String sizeLabel;
-  final IconData icon;
-  final Color iconColor;
-
-  const AttachmentDisplayData({
-    required this.name,
-    required this.sizeLabel,
-    required this.icon,
-    required this.iconColor,
-  });
-}
+export 'package:ai_eru_tawasol/core/shared/widgets/attachments/attachment_display_data.dart';
 
 class AttachmentSectionCard extends StatelessWidget {
   final List<AttachmentDisplayData> attachments;

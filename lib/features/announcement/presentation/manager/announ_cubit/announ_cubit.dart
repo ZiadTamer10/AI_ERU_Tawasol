@@ -1,11 +1,12 @@
 import 'package:ai_eru_tawasol/features/announcement/data/models/announ_models.dart';
 import 'package:ai_eru_tawasol/features/announcement/data/repos/announ_repo.dart';
+import 'package:ai_eru_tawasol/features/announcement/presentation/manager/announ_cubit/announ_tab.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-part 'announ_state.dart';
+export 'package:ai_eru_tawasol/features/announcement/presentation/manager/announ_cubit/announ_tab.dart';
 
-enum AnnounTab { mine, admin }
+part 'announ_state.dart';
 
 class AnnounCubit extends Cubit<AnnounState> {
   AnnounCubit(this._repo) : super(AnnounInitial());

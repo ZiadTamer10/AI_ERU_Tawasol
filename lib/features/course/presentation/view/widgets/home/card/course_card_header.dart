@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ai_eru_tawasol/features/course/data/models/course_models.dart';
 import 'package:ai_eru_tawasol/features/course/presentation/constants/course_colors.dart';
 import 'package:ai_eru_tawasol/features/course/presentation/view/widgets/home/card/course_card_avatar.dart';
+import 'package:ai_eru_tawasol/features/course/presentation/view/widgets/home/card/course_card_code_badge.dart';
 
 class CourseCardHeader extends StatelessWidget {
   final Course course;
@@ -30,7 +31,7 @@ class CourseCardHeader extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: 4),
-              _CodeBadge(course: course),
+              CourseCardCodeBadge(course: course),
               const SizedBox(height: 4),
               Text(
                 course.doctorName,
@@ -52,27 +53,3 @@ class CourseCardHeader extends StatelessWidget {
   }
 }
 
-class _CodeBadge extends StatelessWidget {
-  final Course course;
-  const _CodeBadge({required this.course});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-      decoration: BoxDecoration(
-        color: course.accentColor.withValues(alpha: 0.12),
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: Text(
-        course.code,
-        style: GoogleFonts.plusJakartaSans(
-          fontSize: 11,
-          fontWeight: FontWeight.w700,
-          color: course.accentColor,
-          letterSpacing: 0.3,
-        ),
-      ),
-    );
-  }
-}

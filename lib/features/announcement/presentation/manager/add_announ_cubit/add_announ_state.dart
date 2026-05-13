@@ -1,52 +1,5 @@
 part of 'add_announ_cubit.dart';
 
-class AddAnnounAttachmentItem extends Equatable {
-  final String id;
-  final String name;
-  final String sizeLabel;
-  final AttachmentFileType fileType;
-
-  const AddAnnounAttachmentItem({
-    required this.id,
-    required this.name,
-    required this.sizeLabel,
-    required this.fileType,
-  });
-
-  @override
-  List<Object?> get props => [id, name, sizeLabel, fileType];
-}
-
-enum AddAnnounAudienceType { everyone, department, subject, level }
-
-extension AddAnnounAudienceTypeExt on AddAnnounAudienceType {
-  String get label {
-    switch (this) {
-      case AddAnnounAudienceType.everyone:
-        return 'Everyone';
-      case AddAnnounAudienceType.department:
-        return 'Department';
-      case AddAnnounAudienceType.subject:
-        return 'Subject';
-      case AddAnnounAudienceType.level:
-        return 'Level';
-    }
-  }
-
-  IconData get icon {
-    switch (this) {
-      case AddAnnounAudienceType.everyone:
-        return Icons.public_rounded;
-      case AddAnnounAudienceType.department:
-        return Icons.account_balance_rounded;
-      case AddAnnounAudienceType.subject:
-        return Icons.menu_book_rounded;
-      case AddAnnounAudienceType.level:
-        return Icons.layers_rounded;
-    }
-  }
-}
-
 class AddAnnounState extends Equatable {
   final AnnounRole role;
   final AnnouncementType postType;

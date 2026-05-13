@@ -1,19 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ai_eru_tawasol/core/shared/widgets/filter/feature_filter_chip.dart';
 
-class FilterItem<T> {
-  final String label;
-  final IconData icon;
-  final Color color;
-  final T? value; // null = "All"
-
-  const FilterItem({
-    required this.label,
-    required this.icon,
-    required this.color,
-    required this.value,
-  });
-}
+import 'package:ai_eru_tawasol/core/shared/widgets/filter/filter_item.dart';
+export 'package:ai_eru_tawasol/core/shared/widgets/filter/filter_item.dart';
 
 class FeatureFilterRow<T> extends StatelessWidget {
   final List<FilterItem<T>> items;

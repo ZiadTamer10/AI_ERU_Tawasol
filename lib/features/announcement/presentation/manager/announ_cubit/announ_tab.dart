@@ -1,0 +1,1 @@
+enum AnnounTab { mine, admin }

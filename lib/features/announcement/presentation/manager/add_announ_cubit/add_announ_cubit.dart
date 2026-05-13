@@ -65,6 +65,9 @@ class AddAnnounCubit extends Cubit<AddAnnounState> {
   void selectAudienceType(AddAnnounAudienceType type) =>
       emit(state.copyWith(audienceType: type, selectedOptions: {}));
 
+  void setPriority(AnnouncementPriority priority) =>
+      emit(state.copyWith(priority: priority));
+
   void toggleOption(String option) {
     final updated = Set<String>.from(state.selectedOptions);
     if (updated.contains(option)) {

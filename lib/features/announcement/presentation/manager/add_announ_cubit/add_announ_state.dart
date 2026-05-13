@@ -8,6 +8,7 @@ class AddAnnounState extends Equatable {
   final AddAnnounAudienceType? audienceType;
   final Set<String> selectedOptions;
   final List<AddAnnounAttachmentItem> attachments;
+  final AnnouncementPriority priority;
   final bool isPosting;
   final bool isPosted;
   final String? error;
@@ -20,6 +21,7 @@ class AddAnnounState extends Equatable {
     this.audienceType,
     required this.selectedOptions,
     this.attachments = const [],
+    this.priority = AnnouncementPriority.normal,
     this.isPosting = false,
     this.isPosted = false,
     this.error,
@@ -72,6 +74,7 @@ class AddAnnounState extends Equatable {
         audienceType,
         selectedOptions,
         attachments,
+        priority,
         isPosting,
         isPosted,
         error,
@@ -84,6 +87,7 @@ class AddAnnounState extends Equatable {
     AddAnnounAudienceType? audienceType,
     Set<String>? selectedOptions,
     List<AddAnnounAttachmentItem>? attachments,
+    AnnouncementPriority? priority,
     bool? isPosting,
     bool? isPosted,
     String? error,
@@ -97,6 +101,7 @@ class AddAnnounState extends Equatable {
       audienceType: audienceType ?? this.audienceType,
       selectedOptions: selectedOptions ?? this.selectedOptions,
       attachments: attachments ?? this.attachments,
+      priority: priority ?? this.priority,
       isPosting: isPosting ?? this.isPosting,
       isPosted: isPosted ?? this.isPosted,
       error: clearError ? null : (error ?? this.error),

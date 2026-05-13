@@ -7,6 +7,7 @@ import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/a
 import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/attachments/add_announ_attachment_section.dart';
 import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/audience/add_announ_audience_selector.dart';
 import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/post_type/add_announ_post_type_selector.dart';
+import 'package:ai_eru_tawasol/features/announcement/presentation/view/widgets/add/priority/add_announ_priority_selector.dart';
 
 class AddAnnounBody extends StatefulWidget {
   final AnnounRole role;
@@ -82,6 +83,13 @@ class _AddAnnounBodyState extends State<AddAnnounBody> {
                       onOptionToggled: cubit.toggleOption,
                       availableOptions: cubit.audienceOptions,
                     ),
+                    if (widget.role == AnnounRole.doctor) ...[
+                      const SizedBox(height: 24),
+                      AddAnnounPrioritySelector(
+                        selected: state.priority,
+                        onSelected: cubit.setPriority,
+                      ),
+                    ],
                     const SizedBox(height: 16),
                   ],
                 ),

@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(flutter analyze *)"
+      "Bash(flutter analyze *)",
+      "Bash(powershell -Command \"New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\data\\\\models'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\data\\\\mock'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\data\\\\repos'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\presentation\\\\manager\\\\courses_cubit'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\presentation\\\\manager\\\\course_details_cubit'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\presentation\\\\view\\\\widgets\\\\home'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\presentation\\\\view\\\\widgets\\\\details'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\presentation\\\\view\\\\widgets\\\\states'\")"
     ]
   }
 }

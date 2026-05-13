@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ai_eru_tawasol/core/shared/extensions/announcement_display_ext.dart';
 import 'package:ai_eru_tawasol/core/utils/app_router.dart';
 import 'package:ai_eru_tawasol/features/announcement/data/models/announ_models.dart';
 import 'package:ai_eru_tawasol/features/announcement/presentation/constants/announ_colors.dart';
@@ -20,8 +21,8 @@ class AnnounCardContent extends StatelessWidget {
 
     return GestureDetector(
       onTap: () => context.push(
-        AppRouter.kAnnouncementDetailsView,
-        extra: announcement,
+        AppRouter.kContentDetailsView,
+        extra: announcement.toDisplayItem(),
       ),
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),

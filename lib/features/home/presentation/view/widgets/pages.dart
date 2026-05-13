@@ -8,6 +8,5 @@ List<Widget> buildPages(AnnounRole role) => [
       AnnounView(role: role),
       const ChatView(),
       const Text('Cousre Feature'),
-      // const CoursesView(),
       const ProfileView(),
     ];

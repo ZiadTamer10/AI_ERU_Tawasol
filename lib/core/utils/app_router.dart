@@ -27,7 +27,6 @@ class AppRouter {
   static const kForgetPasswordView = '/forgetPasswordView';
   static const kHomeView = '/homeView';
   static const kAnnouncementDetailsView = '/announcementDetailsView';
-  static const kCourseDetailsView = '/courseDetailsView';
   static const kProfileView = '/profileView';
   static const kChangePasswordView = '/changePasswordView';
   static const kThemeModeView = '/themeModeView';
@@ -66,10 +65,6 @@ class AppRouter {
           announcement: state.extra as Announcement,
         ),
       ),
-      // GoRoute(
-      //   path: kCourseDetailsView,
-      //   builder: (context, state) => CourseDetailsView(),
-      // ),
       GoRoute(path: kProfileView, builder: (context, state) => ProfileView()),
       GoRoute(
         path: kChangePasswordView,

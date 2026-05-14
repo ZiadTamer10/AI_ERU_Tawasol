@@ -4,7 +4,9 @@
       "Bash(flutter analyze *)",
       "Bash(powershell -Command \"New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\data\\\\models'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\data\\\\mock'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\data\\\\repos'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\presentation\\\\manager\\\\courses_cubit'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\presentation\\\\manager\\\\course_details_cubit'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\presentation\\\\view\\\\widgets\\\\home'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\presentation\\\\view\\\\widgets\\\\details'; New-Item -ItemType Directory -Force -Path 'd:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\course\\\\presentation\\\\view\\\\widgets\\\\states'\")",
       "Bash(Get-ChildItem -Path \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\" -Recurse -Filter \"*.dart\")",
-      "Bash(Select-Object -ExpandProperty FullName)"
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Remove-Item \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\splash\\\\presentation\\\\view\\\\widgets\\\\logo_and_title.dart\")",
+      "PowerShell(Remove-Item \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\splash\\\\presentation\\\\view\\\\widgets\\\\logo_and_title.dart\" -Confirm:$false)"
     ]
   }
 }

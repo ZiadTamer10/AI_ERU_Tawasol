@@ -6,7 +6,8 @@
       "Bash(Get-ChildItem -Path \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\" -Recurse -Filter \"*.dart\")",
       "Bash(Select-Object -ExpandProperty FullName)",
       "Bash(Remove-Item \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\splash\\\\presentation\\\\view\\\\widgets\\\\logo_and_title.dart\")",
-      "PowerShell(Remove-Item \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\splash\\\\presentation\\\\view\\\\widgets\\\\logo_and_title.dart\" -Confirm:$false)"
+      "PowerShell(Remove-Item \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\splash\\\\presentation\\\\view\\\\widgets\\\\logo_and_title.dart\" -Confirm:$false)",
+      "Bash(Get-ChildItem -Recurse -Path \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\onboarding\\\\\" -File | Select-Object FullName)"
     ]
   }
 }

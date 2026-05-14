@@ -1,35 +1,39 @@
-import 'package:ai_eru_tawasol/core/utils/assets.dart';
 import 'package:ai_eru_tawasol/features/onboarding/data/model/on_boarding_model.dart';
+import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/illustrations/on_boarding_illus_1.dart';
+import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/illustrations/on_boarding_illus_2.dart';
+import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/illustrations/on_boarding_illus_3.dart';
+import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/illustrations/on_boarding_illus_4.dart';
+import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/illustrations/on_boarding_illus_5.dart';
 
 final List<OnBoardingModel> onBoardingList = [
-  OnBoardingModel(
-    image: AssetsData.onBoarding1,
-    title: 'Welcome to AI\nConnect!',
+  const OnBoardingModel(
+    illustration: OnBoardingIllus1(),
+    title: 'Smart Campus\nPlatform',
     subtitle:
-        'The smart communication hub for AI\nstudents and faculty at ERU.',
+        'Experience university life reimagined\nwith AI-powered tools built for ERU.',
   ),
-  OnBoardingModel(
-    image: AssetsData.onBoarding2,
-    title: 'Seamless Academic\n Updates',
+  const OnBoardingModel(
+    illustration: OnBoardingIllus2(),
+    title: 'Instant Academic\nAnnouncements',
     subtitle:
-        'Receive announcements, lecture links,\n and exam schedules directly from \nyour instructors.',
+        'Stay informed with real-time updates\nfrom your professors and departments.',
   ),
-  OnBoardingModel(
-    image: AssetsData.onBoarding3,
-    title: 'Submit Assignments Easily',
+  const OnBoardingModel(
+    illustration: OnBoardingIllus3(),
+    title: 'Courses &\nMaterials',
     subtitle:
-        'Securely upload your solved \nassignments from any device and \ntrack your submissions.',
+        'Access lectures, assignments and\ncourse content — all in one place.',
   ),
-  OnBoardingModel(
-    image: AssetsData.onBoarding4,
-    title: 'Direct Faculty Access &\n Support',
+  const OnBoardingModel(
+    illustration: OnBoardingIllus4(),
+    title: 'Direct Faculty\nCommunication',
     subtitle:
-        'Communicate with professors \nand advisors, and easily submit academic \nfeedback or complaints.',
+        'Chat directly with professors and TAs.\nGet answers when you need them.',
   ),
-  OnBoardingModel(
-    image: AssetsData.onBoarding5,
-    title: 'Kick-start Your Studies!',
+  const OnBoardingModel(
+    illustration: OnBoardingIllus5(),
+    title: 'Your Platform\nAwaits',
     subtitle:
-        'Log in with your university credentials \nand access your personalized course\n materials.',
+        'Sign in with your university credentials\nand begin your smart campus journey.',
   ),
 ];

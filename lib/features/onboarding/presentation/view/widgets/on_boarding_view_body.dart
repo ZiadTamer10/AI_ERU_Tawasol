@@ -1,10 +1,12 @@
-import 'package:ai_eru_tawasol/constants.dart';
+import 'package:ai_eru_tawasol/core/utils/app_router.dart';
 import 'package:ai_eru_tawasol/features/onboarding/data/model/on_boarding_data.dart';
+import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/on_boarding_background.dart';
 import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/on_boarding_button.dart';
 import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/on_boarding_item.dart';
+import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/on_boarding_page_indicator.dart';
 import 'package:ai_eru_tawasol/features/onboarding/presentation/view/widgets/skip_button.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:go_router/go_router.dart';
 
 class OnBoardingViewBody extends StatefulWidget {
   const OnBoardingViewBody({super.key});
@@ -14,51 +16,75 @@ class OnBoardingViewBody extends StatefulWidget {
 }
 
 class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
-  final PageController controller = PageController();
-  int currentIndex = 0;
+  final PageController _pageController = PageController();
+  int _currentPage = 0;
 
-  bool get isLastPage => currentIndex == onBoardingList.length - 1;
+  bool get _isLastPage => _currentPage == onBoardingList.length - 1;
+
+  void _goToLogin() => context.go(AppRouter.kLoginView);
+
+  void _nextPage() {
+    _pageController.nextPage(
+      duration: const Duration(milliseconds: 480),
+      curve: Curves.easeInOutCubic,
+    );
+  }
 
   @override
   void dispose() {
-    controller.dispose();
+    _pageController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
+      fit: StackFit.expand,
       children: [
-        SkipButton(isLastPage: isLastPage, controller: controller),
-        Expanded(
-          child: PageView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            controller: controller,
-            itemCount: onBoardingList.length,
-            onPageChanged: (index) {
-              setState(() => currentIndex = index);
-            },
-            itemBuilder: (context, index) {
-              return OnBoardingItem(model: onBoardingList[index]);
-            },
+        const OnBoardingBackground(),
+        SafeArea(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(24, 18, 24, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const SizedBox(width: 60),
+                    OnBoardingPageIndicator(
+                      count: onBoardingList.length,
+                      current: _currentPage,
+                    ),
+                    SkipButton(
+                      isLastPage: _isLastPage,
+                      onSkip: _goToLogin,
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: PageView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  controller: _pageController,
+                  itemCount: onBoardingList.length,
+                  onPageChanged: (i) => setState(() => _currentPage = i),
+                  itemBuilder: (ctx, i) => OnBoardingItem(
+                    key: ValueKey(i),
+                    model: onBoardingList[i],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 28),
+              OnBoardingButton(
+                isLastPage: _isLastPage,
+                onPressed: _isLastPage ? _goToLogin : _nextPage,
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).padding.bottom + 36,
+              ),
+            ],
           ),
         ),
-        if (!isLastPage)
-          SmoothPageIndicator(
-            controller: controller,
-            count: onBoardingList.length,
-            effect: const SlideEffect(
-              spacing: 3,
-              dotHeight: 8,
-              dotWidth: 8,
-              activeDotColor: kPrimaryColor,
-            ),
-          )
-        else
-          const SizedBox.shrink(),
-        const SizedBox(height: 50),
-        OnBoardingButton(isLastPage: isLastPage, controller: controller),
-        const SizedBox(height: 65),
       ],
     );
   }

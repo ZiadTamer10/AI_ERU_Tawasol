@@ -1,49 +1,45 @@
-import 'package:ai_eru_tawasol/core/utils/styles.dart';
-import 'package:ai_eru_tawasol/features/onboarding/data/model/on_boarding_data.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SkipButton extends StatelessWidget {
   const SkipButton({
     super.key,
     required this.isLastPage,
-    required this.controller,
+    required this.onSkip,
   });
 
   final bool isLastPage;
-  final PageController controller;
+  final VoidCallback onSkip;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 22, top: 22),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          AnimatedOpacity(
-            duration: const Duration(milliseconds: 200),
-            opacity: isLastPage ? 0 : 1,
-            child: ElevatedButton(
-              onPressed: isLastPage
-                  ? null
-                  : () {
-                      controller.animateToPage(
-                        onBoardingList.length - 1,
-                        duration: const Duration(milliseconds: 1),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(25, 30),
-                backgroundColor: const Color(0xffD9D9D9),
-                elevation: 0,
+    return AnimatedOpacity(
+      duration: const Duration(milliseconds: 250),
+      opacity: isLastPage ? 0.0 : 1.0,
+      child: IgnorePointer(
+        ignoring: isLastPage,
+        child: GestureDetector(
+          onTap: onSkip,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.07),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: Colors.white.withValues(alpha: 0.12),
+                width: 1,
               ),
-              child: Text(
-                'SKIP',
-                style: Styles.textStyle14.copyWith(color: Colors.black),
+            ),
+            child: Text(
+              'Skip',
+              style: GoogleFonts.plusJakartaSans(
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: Colors.white.withValues(alpha: 0.65),
               ),
             ),
           ),
-        ],
+        ),
       ),
     );
   }

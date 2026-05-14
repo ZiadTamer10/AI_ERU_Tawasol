@@ -1,10 +1,12 @@
+import 'package:flutter/material.dart';
+
 class OnBoardingModel {
-  final String image;
+  final Widget illustration;
   final String title;
   final String subtitle;
 
-  OnBoardingModel({
-    required this.image,
+  const OnBoardingModel({
+    required this.illustration,
     required this.title,
     required this.subtitle,
   });

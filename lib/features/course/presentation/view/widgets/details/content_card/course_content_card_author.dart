@@ -45,8 +45,6 @@ class CourseContentCardAuthor extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     color: typeColor,
                   ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 1),
                 Text(

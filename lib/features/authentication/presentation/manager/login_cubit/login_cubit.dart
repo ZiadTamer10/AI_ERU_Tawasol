@@ -1,22 +1,27 @@
+import 'package:ai_eru_tawasol/features/authentication/data/models/auth_user_model.dart';
 import 'package:ai_eru_tawasol/features/authentication/data/repos/auth_repo.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit(this.authRepo) : super(LoginInitial());
+  LoginCubit(this._repo) : super(LoginInitial());
 
-  final AuthRepo authRepo;
+  final AuthRepo _repo;
 
-  Future<void> login({required String email, required String password}) async {
+  Future<void> login({
+    required String email,
+    required String password,
+  }) async {
     emit(LoginLoading());
-    var result = await authRepo.login(email: email, password: password);
-
-    result.fold(
-      (failure) => emit(LoginFailure(failure.errMessage)),
-      (user) => emit(LoginSuccess(user)),
-    );
+    try {
+      final user = await _repo.login(email: email, password: password);
+      if (isClosed) return;
+      emit(LoginSuccess(user));
+    } catch (e) {
+      if (isClosed) return;
+      emit(LoginFailure(e.toString()));
+    }
   }
 }

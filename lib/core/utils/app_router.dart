@@ -1,15 +1,13 @@
-﻿import 'package:ai_eru_tawasol/core/services/service_locator.dart';
 import 'package:ai_eru_tawasol/core/shared/models/content_display_item.dart';
 import 'package:ai_eru_tawasol/core/shared/views/content_details/content_details_view.dart';
 import 'package:ai_eru_tawasol/features/announcement/data/models/announ_models.dart';
 import 'package:ai_eru_tawasol/features/announcement/presentation/view/add_announ_view.dart';
-import 'package:ai_eru_tawasol/features/course/data/models/course_models.dart';
-import 'package:ai_eru_tawasol/features/course/presentation/view/course_details_view.dart';
-import 'package:ai_eru_tawasol/features/authentication/data/repos/auth_repo_impl.dart';
-import 'package:ai_eru_tawasol/features/authentication/presentation/manager/forget_password_cubit/forget_password_cubit.dart';
-import 'package:ai_eru_tawasol/features/authentication/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/forget_password_view.dart';
 import 'package:ai_eru_tawasol/features/authentication/presentation/view/login_view.dart';
+import 'package:ai_eru_tawasol/features/authentication/presentation/view/otp_view.dart';
+import 'package:ai_eru_tawasol/features/authentication/presentation/view/reset_password_view.dart';
+import 'package:ai_eru_tawasol/features/course/data/models/course_models.dart';
+import 'package:ai_eru_tawasol/features/course/presentation/view/course_details_view.dart';
 import 'package:ai_eru_tawasol/features/home/presentation/view/home_view.dart';
 import 'package:ai_eru_tawasol/features/onboarding/presentation/view/on_boarding_view.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/about_me_view.dart';
@@ -21,7 +19,6 @@ import 'package:ai_eru_tawasol/features/profile/presentation/view/our_mission_vi
 import 'package:ai_eru_tawasol/features/profile/presentation/view/profile_view.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/theme_mode_view.dart';
 import 'package:ai_eru_tawasol/features/splash/presentation/view/splash_view.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
@@ -37,6 +34,8 @@ class AppRouter {
   static const kOurMissionView = '/ourMissionView';
   static const kContactUsView = '/contactUsView';
   static const kAppVersionView = '/appVersionView';
+  static const kOtpView = '/otpView';
+  static const kResetPasswordView = '/resetPasswordView';
   static const kAddAnnouncementView = '/addAnnouncementView';
   static const kCourseDetailsView = '/courseDetailsView';
   static const kContentDetailsView = '/contentDetailsView';
@@ -50,17 +49,20 @@ class AppRouter {
       ),
       GoRoute(
         path: kLoginView,
-        builder: (context, state) => BlocProvider(
-          create: (context) => LoginCubit(getIt.get<AuthRepoImpl>()),
-          child: LoginView(),
-        ),
+        builder: (context, state) => const LoginView(),
       ),
       GoRoute(
         path: kForgetPasswordView,
-        builder: (context, state) => BlocProvider(
-          create: (context) => ForgetPasswordCubit(getIt.get<AuthRepoImpl>()),
-          child: ForgetPasswordView(),
-        ),
+        builder: (context, state) => const ForgetPasswordView(),
+      ),
+      GoRoute(
+        path: kOtpView,
+        builder: (context, state) => OtpView(email: state.extra as String),
+      ),
+      GoRoute(
+        path: kResetPasswordView,
+        builder: (context, state) =>
+            ResetPasswordView(email: state.extra as String),
       ),
       GoRoute(path: kHomeView, builder: (context, state) => HomeView()),
       GoRoute(path: kProfileView, builder: (context, state) => ProfileView()),

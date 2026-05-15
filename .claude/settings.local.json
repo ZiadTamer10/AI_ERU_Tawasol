@@ -7,7 +7,12 @@
       "Bash(Select-Object -ExpandProperty FullName)",
       "Bash(Remove-Item \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\splash\\\\presentation\\\\view\\\\widgets\\\\logo_and_title.dart\")",
       "PowerShell(Remove-Item \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\splash\\\\presentation\\\\view\\\\widgets\\\\logo_and_title.dart\" -Confirm:$false)",
-      "Bash(Get-ChildItem -Recurse -Path \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\onboarding\\\\\" -File | Select-Object FullName)"
+      "Bash(Get-ChildItem -Recurse -Path \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\onboarding\\\\\" -File | Select-Object FullName)",
+      "Bash(Get-ChildItem -Path \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\authentication\" -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "Bash(Get-ChildItem -Path \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\announcement\" -Recurse -File)",
+      "Bash(Sort-Object)",
+      "Bash(Get-ChildItem -Recurse \"d:\\\\Courses\\\\Flutter Projects\\\\ai_connect\\\\frontend\\\\lib\\\\features\\\\authentication\" -File)"
     ]
   }
 }

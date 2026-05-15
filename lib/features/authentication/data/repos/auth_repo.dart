@@ -1,12 +1,17 @@
-import 'package:ai_eru_tawasol/core/errors/auth_failure.dart';
-import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:ai_eru_tawasol/features/authentication/data/models/auth_user_model.dart';
 
 abstract class AuthRepo {
-  Future<Either<AuthFailure, User>> login({
+  Future<AuthUserModel> login({
     required String email,
     required String password,
   });
 
   Future<void> forgetPassword({required String email});
+
+  Future<void> verifyOtp({required String email, required String code});
+
+  Future<void> resetPassword({
+    required String email,
+    required String newPassword,
+  });
 }

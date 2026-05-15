@@ -1,4 +1,3 @@
-import 'package:ai_eru_tawasol/features/authentication/presentation/view/widgets/custom_button.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/additional_pages_app_bar.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/custom_password_section.dart';
 import 'package:ai_eru_tawasol/features/profile/presentation/view/widgets/password_requirements_list.dart';
@@ -71,10 +70,10 @@ class _ChangePasswordViewBodyState extends State<ChangePasswordViewBody> {
             hasUpperCase: hasUpperCase,
           ),
           SizedBox(height: 60),
-          SizedBox(
-            width: double.infinity,
-            child: CustomButton(text: 'Update Password', onPressed: () {}),
-          ),
+          // SizedBox(
+          //   width: double.infinity,
+          //   child: CustomButton(text: 'Update Password', onPressed: () {}),
+          // ),
         ],
       ),
     );

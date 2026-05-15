@@ -20,5 +20,6 @@ List<Widget> buildPages(AnnounRole role) => [
       AnnounView(role: role),
       const ChatView(),
       CourseView(role: _courseRoleFrom(role)),
-      const ProfileView(),
+      // const ProfileView(),
+      Text('Profile Feature')
     ];

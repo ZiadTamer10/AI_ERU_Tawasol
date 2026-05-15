@@ -2,18 +2,24 @@ part of 'forget_password_cubit.dart';
 
 sealed class ForgetPasswordState extends Equatable {
   const ForgetPasswordState();
-
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
-class ForgetPasswordInitial extends ForgetPasswordState {}
+final class ForgetPasswordInitial extends ForgetPasswordState {}
 
-class ForgetPasswordLoading extends ForgetPasswordState {}
+final class ForgetPasswordLoading extends ForgetPasswordState {}
 
-class ForgetPasswordSuccess extends ForgetPasswordState {}
+final class ForgetPasswordSuccess extends ForgetPasswordState {
+  final String email;
+  const ForgetPasswordSuccess(this.email);
+  @override
+  List<Object?> get props => [email];
+}
 
-class ForgetPasswordFailure extends ForgetPasswordState {
+final class ForgetPasswordFailure extends ForgetPasswordState {
   final String errMessage;
   const ForgetPasswordFailure(this.errMessage);
+  @override
+  List<Object?> get props => [errMessage];
 }

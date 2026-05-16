@@ -21,7 +21,7 @@ class LoginHeader extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Text(
-          'Sign in to your AI Connect account',
+          'Sign in with your university account',
           style: GoogleFonts.plusJakartaSans(
             color: Colors.white54,
             fontSize: 14,
